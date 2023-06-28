@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="130dp"
+        android:layout_y="180dp"
+        android:text="SIGNUP"
+        android:textColor="@color/Lavender"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_x="45dp"
+        android:layout_y="250dp"
+        android:background="@drawable/custom_btn2"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:paddingLeft="40dp"
+        android:textColorHint="#526D82" />
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_x="45dp"
+        android:layout_y="320dp"
+        android:background="@drawable/custom_btn2"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:paddingLeft="40dp"
+        android:textColorHint="#526D82" />
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="72dp"
+        android:layout_x="45dp"
+        android:layout_y="390dp"
+        android:background="@drawable/custom_btn2"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="40dp"
+        android:textColorHint="#526D82" />
+
+    <EditText
+        android:id="@+id/repassword"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="72dp"
+        android:layout_x="45dp"
+        android:layout_y="460dp"
+        android:background="@drawable/custom_btn2"
+        android:ems="10"
+        android:hint="Re-Type Password"
+        android:inputType="textPassword"
+        android:paddingLeft="40dp"
+        android:textColorHint="#526D82" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_x="55dp"
+        android:layout_y="330dp"
+        app:srcCompat="@drawable/user" />
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_x="55dp"
+        android:layout_y="264dp"
+        app:srcCompat="@drawable/email" />
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_x="55dp"
+        android:layout_y="400dp"
+        app:srcCompat="@drawable/locked" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_x="55dp"
+        android:layout_y="470dp"
+        app:srcCompat="@drawable/locked" />
+
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_x="100dp"
+        android:layout_y="550dp"
+        android:background="@drawable/custom_btn"
+        android:elevation="100px"
+        android:text="signup"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="25dp"
+        android:layout_y="630dp"
+        android:text="Already Have have account? "
+        android:textColor="#000000"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/loginhere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="285dp"
+        android:layout_y="630dp"
+        android:text="Login Here ! "
+        android:textColor="@color/Lavender"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+</AbsoluteLayout>

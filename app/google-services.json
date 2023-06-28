@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "454453115290",
+    "project_id": "teleheal-24-7-health-car-f63e6",
+    "storage_bucket": "teleheal-24-7-health-car-f63e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454453115290:android:ec5f188bb4f0cdc600e223",
+        "android_client_info": {
+          "package_name": "com.example.teleheal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454453115290-4ki8vg9im7gh8jr73dpj6bdalho236ab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teleheal",
+            "certificate_hash": "77300ecae5aeb5af3d1c469eedb2b6ea43fe0096"
+          }
+        },
+        {
+          "client_id": "454453115290-36m1u2t8kg0kor1nn7fgcc6tcun48th4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrEETQRt4bvv5YgcysUXzZHfSHmzcuPx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454453115290-36m1u2t8kg0kor1nn7fgcc6tcun48th4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
