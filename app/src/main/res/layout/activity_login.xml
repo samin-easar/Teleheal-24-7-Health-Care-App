@@ -8,8 +8,10 @@
 
     <ImageView
         android:id="@+id/bg"
-        android:layout_width="wrap_content"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
+        android:layout_x="-50dp"
+        android:layout_y="-3dp"
         app:srcCompat="@drawable/img" />
 
     <TextView
@@ -99,5 +101,15 @@
         android:layout_x="55dp"
         android:layout_y="430dp"
         app:srcCompat="@drawable/locked" />
+
+    <TextView
+        android:id="@+id/forgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="230dp"
+        android:layout_y="489dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="Forgot Password?" />
 
 </AbsoluteLayout>
