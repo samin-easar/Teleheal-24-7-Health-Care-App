@@ -8,6 +8,34 @@
     tools:context=".Home">
 
     <RelativeLayout
+        android:id="@+id/profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_x="300dp"
+        android:layout_y="50dp"
+        android:background="@drawable/custom_btn"
+        android:elevation="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@drawable/user" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="11dp"
+            android:textStyle="bold"
+            android:textSize="8dp"
+            android:textColor="@color/white"
+            android:text=" Profile" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/appointment"
         android:layout_width="130dp"
         android:layout_height="130dp"
