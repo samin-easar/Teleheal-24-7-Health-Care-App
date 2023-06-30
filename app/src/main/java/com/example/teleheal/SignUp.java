@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class SignUp extends AppCompatActivity {
 
     TextView loginhere;
-    EditText email,username,password;
+    EditText email,fullname,username,password;
     Button signupbtn;
     FirebaseDatabase database;
     DatabaseReference reference;
@@ -36,6 +36,7 @@ public class SignUp extends AppCompatActivity {
 
         loginhere=findViewById(R.id.loginhere);
         email=findViewById(R.id.email);
+        fullname=findViewById(R.id.fullname);
         username=findViewById(R.id.username);
         password=findViewById(R.id.password);
         signupbtn=findViewById(R.id.signupbtn);
@@ -47,10 +48,11 @@ public class SignUp extends AppCompatActivity {
                 reference=database.getReference("users");
 
                 String Email=email.getText().toString();
+                String Fullname=fullname.getText().toString();
                 String Username=username.getText().toString();
                 String Password=password.getText().toString();
 
-                HelperClass helperClass=new HelperClass(Email,Username,Password);
+                HelperClass helperClass=new HelperClass(Email,Fullname,Username,Password);
                 reference.child(Username).setValue(helperClass);
 
                 Toast.makeText(SignUp.this,"SignUp Successfully",Toast.LENGTH_LONG).show();

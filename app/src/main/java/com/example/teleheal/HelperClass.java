@@ -1,7 +1,7 @@
 package com.example.teleheal;
 
 public class HelperClass {
-    String email,username,password;
+    String email,fullname,username,password;
 
     public String getEmail() {
         return email;
@@ -10,6 +10,15 @@ public class HelperClass {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
 
     public String getUsername() {
         return username;
@@ -27,8 +36,9 @@ public class HelperClass {
         this.password = password;
     }
 
-    public HelperClass(String email, String username, String password) {
+    public HelperClass(String email,String fullname, String username, String password) {
         this.email = email;
+        this.fullname=fullname;
         this.username = username;
         this.password = password;
     }
