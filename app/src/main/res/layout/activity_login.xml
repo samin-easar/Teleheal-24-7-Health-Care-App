@@ -11,7 +11,7 @@
         android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:layout_x="-50dp"
-        android:layout_y="-3dp"
+        android:layout_y="-4dp"
         app:srcCompat="@drawable/img" />
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="150dp"
-        android:layout_y="220dp"
+        android:layout_y="180dp"
         android:text="LOGIN"
         android:textColor="@color/Lavender"
         android:textSize="40dp"
@@ -30,7 +30,7 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_x="45dp"
-        android:layout_y="320dp"
+        android:layout_y="250dp"
         android:background="@drawable/custom_btn2"
         android:ems="10"
         android:hint="Username"
@@ -44,7 +44,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="72dp"
         android:layout_x="45dp"
-        android:layout_y="420dp"
+        android:layout_y="340dp"
         android:background="@drawable/custom_btn2"
         android:ems="10"
         android:hint="Password"
@@ -57,7 +57,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_x="100dp"
-        android:layout_y="530dp"
+        android:layout_y="450dp"
         android:elevation="20px"
         android:background="@drawable/custom_btn"
         android:text="login"
@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="48dp"
-        android:layout_y="624dp"
+        android:layout_y="550dp"
         android:text="Dont't have account? "
         android:textColor="#000000"
         android:textSize="20dp" />
@@ -80,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="240dp"
-        android:layout_y="624dp"
+        android:layout_y="550dp"
         android:text="Register Here ! "
         android:textColor="@color/Lavender"
         android:textStyle="bold"
@@ -91,7 +91,7 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:layout_x="55dp"
-        android:layout_y="330dp"
+        android:layout_y="260dp"
         app:srcCompat="@drawable/user" />
 
     <ImageView
@@ -99,7 +99,7 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:layout_x="55dp"
-        android:layout_y="430dp"
+        android:layout_y="350dp"
         app:srcCompat="@drawable/locked" />
 
     <TextView
@@ -107,9 +107,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="230dp"
-        android:layout_y="489dp"
+        android:layout_y="400dp"
         android:textSize="16dp"
         android:textStyle="bold"
         android:text="Forgot Password?" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="590dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="OR" />
+
+    <ImageView
+        android:id="@+id/googlesignin"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_x="80dp"
+        android:layout_y="630dp"
+        app:srcCompat="@drawable/googlesigninbutton" />
 
 </AbsoluteLayout>
