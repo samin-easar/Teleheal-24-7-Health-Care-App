@@ -186,11 +186,21 @@ public class Login extends AppCompatActivity {
                 if(snapshot.exists()){
                     username.setError(null);
                     String passwordFromDB= snapshot.child(userUsername).child("password").getValue(String.class);
-
-                    if(Objects.equals(passwordFromDB,userPassword)){
+                    //Objects.equals(passwordFromDB,userPassword
+                    if(passwordFromDB.equals(userPassword)){
                         username.setError(null);
+
+                        //Pass The Data using Intent
+                       /* String nameFromDB= snapshot.child(userUsername).child("fullname").getValue(String.class);
+                        String emailFromDB= snapshot.child(userUsername).child("email").getValue(String.class);
+                        String usernameFromDB=snapshot.child(userUsername).child("username").getValue(String.class);*/
+
                         Toast.makeText(Login.this,"Login Successfully",Toast.LENGTH_LONG).show();
                         Intent intent=new Intent(Login.this,Home.class);
+                       /* intent.putExtra("name",nameFromDB);
+                        intent.putExtra("email",emailFromDB);
+                        intent.putExtra("username",usernameFromDB);
+                        intent.putExtra("password",passwordFromDB);*/
                         startActivity(intent);
                     }else{
                         password.setError("Invalid Credentials");

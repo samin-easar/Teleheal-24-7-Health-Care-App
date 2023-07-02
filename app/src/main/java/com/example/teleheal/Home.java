@@ -11,9 +11,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Home extends AppCompatActivity {
     Button logout;
     RelativeLayout profile;
+    FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +35,21 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        logout=findViewById(R.id.logout);
+        logout=(Button) findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Home.this,MainActivity.class);
-                startActivity(intent);
+                auth.signOut();
+                signoutUser();
+               // startActivity(new Intent(Home.this,Login.class));
             }
         });
+    }
+
+    private void signoutUser() {
+        Intent intent=new Intent(Home.this,Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
