@@ -88,6 +88,7 @@
         android:background="@drawable/custom_btn"
         android:text="Edit profile"
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="18dp" />
 
     <Button
@@ -97,7 +98,8 @@
         android:layout_marginTop="700dp"
         android:layout_marginLeft="210dp"
         android:background="@drawable/custom_btn"
-        android:text="Home"
+        android:text="GO BACK"
         android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="18dp"/>
 </RelativeLayout>

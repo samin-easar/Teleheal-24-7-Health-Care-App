@@ -3,6 +3,7 @@ package com.example.teleheal;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Home extends AppCompatActivity {
     Button logout;
 
-    RelativeLayout profile;
+    RelativeLayout profile, findDoctor;
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,16 @@ public class Home extends AppCompatActivity {
                 intent.putExtra("passingUsername1",passesUsername);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        findDoctor=findViewById(R.id.appointment);
+        findDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(new Intent(Home.this,FindDoctor.class));
+                startActivity(intent);
             }
         });
 
