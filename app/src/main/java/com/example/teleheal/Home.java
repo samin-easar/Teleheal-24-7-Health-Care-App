@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Home extends AppCompatActivity {
     Button logout;
+
     RelativeLayout profile;
     FirebaseAuth auth;
     @Override
@@ -30,8 +31,13 @@ public class Home extends AppCompatActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //receive a string from Login class
+                String passesUsername = getIntent().getStringExtra("passingUsername");
+
                 Intent intent=new Intent(Home.this,Profile.class);
+                intent.putExtra("passingUsername1",passesUsername);
                 startActivity(intent);
+                finish();
             }
         });
 

@@ -175,6 +175,7 @@ public class Login extends AppCompatActivity {
     }
     public void checkUser(){
         String userUsername=username.getText().toString();
+        String passUsername=username.getText().toString();
         String userPassword=password.getText().toString();
 
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference("users");
@@ -190,18 +191,12 @@ public class Login extends AppCompatActivity {
                     if(passwordFromDB.equals(userPassword)){
                         username.setError(null);
 
-                        //Pass The Data using Intent
-                       /* String nameFromDB= snapshot.child(userUsername).child("fullname").getValue(String.class);
-                        String emailFromDB= snapshot.child(userUsername).child("email").getValue(String.class);
-                        String usernameFromDB=snapshot.child(userUsername).child("username").getValue(String.class);*/
-
                         Toast.makeText(Login.this,"Login Successfully",Toast.LENGTH_LONG).show();
+
                         Intent intent=new Intent(Login.this,Home.class);
-                       /* intent.putExtra("name",nameFromDB);
-                        intent.putExtra("email",emailFromDB);
-                        intent.putExtra("username",usernameFromDB);
-                        intent.putExtra("password",passwordFromDB);*/
+                        intent.putExtra("passingUsername",passUsername); //pass a string to Home class
                         startActivity(intent);
+                        finish();
                     }else{
                         password.setError("Invalid Credentials");
                         password.requestFocus();

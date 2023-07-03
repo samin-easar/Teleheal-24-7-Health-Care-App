@@ -26,9 +26,9 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="120dp"
+        android:layout_x="80dp"
         android:layout_y="240dp"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:text="Name" />
@@ -50,7 +50,7 @@
         android:layout_x="160dp"
         android:layout_y="450dp"
         android:textSize="25dp"
-        android:text="TextView" />
+        android:text=" TextView" />
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
         android:layout_x="105dp"
         android:layout_y="530dp"
         android:textSize="25dp"
-        android:text="TextView" />
+        android:text=" TextView" />
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
         android:layout_x="160dp"
         android:layout_y="600dp"
         android:textSize="25dp"
-        android:text="TextView" />
+        android:text=" TextView" />
 
     <Button
         android:id="@+id/button"

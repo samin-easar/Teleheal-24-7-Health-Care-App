@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +20,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
 
 public class Profile extends AppCompatActivity {
 
     TextView fname,uname,uemail,upassword;
-    Button homebtn;
+    Button homebtn,button;
     FirebaseUser user;
     DatabaseReference ref;
     String userID;
@@ -44,39 +47,57 @@ public class Profile extends AppCompatActivity {
         upassword=findViewById(R.id.dashboardpassword);
         homebtn=findViewById(R.id.home);
 
-        //user= FirebaseAuth.getInstance().getCurrentUser();
-       // ref= FirebaseDatabase.getInstance().getReference("Users");
-        //userID=user.getUid();
+        button=findViewById(R.id.button);
 
-        /*ref.addValueEventListener(new ValueEventListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //User userprofile= snapshot.getValue(User.class);
-                    String fullname=snapshot.child(userID).child("fullname").getValue(String.class);
-                    String email=snapshot.child(userID).child("email").getValue(String.class);
-                    String username=snapshot.child(userID).child("username").getValue(String.class);
-                    String password=snapshot.child(userID).child("password").getValue(String.class);
-
-                    fname.setText(fullname);
-                    uname.setText(username);
-                    uemail.setText(email);
-                    upassword.setText(password);
+            public void onClick(View view) {
+                Toast.makeText(Profile.this, "Edit button Clicked", Toast.LENGTH_LONG).show();
             }
+        });
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Profile.this,"Something Went Wrong !",Toast.LENGTH_SHORT).show();
-            }
-        });*/
+        //Show All data
+        showuserdata();
 
         homebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String passUsername=  getIntent().getStringExtra("passingUsername1"); //receive a string from Home class
+
                 Intent intent=new Intent(Profile.this,Home.class);
+                intent.putExtra("passingUsername",passUsername);  //pass a string to Profile class
                 startActivity(intent);
+                finish();
             }
         });
+    }
+    public void showuserdata(){
+        //receive a string from Home class
+        String userUsername = getIntent().getStringExtra("passingUsername1");
 
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference("users");
+        Query checkUserDatabase= reference.orderByChild("username").equalTo(userUsername);
+        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String fullnameFromDB = snapshot.child(userUsername).child("fullname").getValue(String.class);
+                    String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
+                    String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+
+                    fname.setText(fullnameFromDB);
+                    uemail.setText(emailFromDB);
+                    uname.setText(usernameFromDB);
+                    upassword.setText(passwordFromDB);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 }
