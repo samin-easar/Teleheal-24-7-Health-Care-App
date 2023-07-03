@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         signup=findViewById(R.id.signup);
         login=findViewById(R.id.login);
         logo=findViewById(R.id.logoimg);
-        bg=findViewById(R.id.btnbg);
+        //bg=findViewById(R.id.btnbg);
         title=findViewById(R.id.title);
         slogan=findViewById(R.id.subtitle);
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         logo.setAnimation(topAnim);
         title.setAnimation(topAnim);
         slogan.setAnimation(topAnim);
-        bg.setAnimation(botAnim);
+       //bg.setAnimation(botAnim);
         login.setAnimation(botAnim);
         signup.setAnimation(botAnim);
 

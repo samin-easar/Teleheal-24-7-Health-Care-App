@@ -4,15 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img"
     tools:context=".Login">
-
-    <ImageView
-        android:id="@+id/bg"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:layout_x="-50dp"
-        android:layout_y="-4dp"
-        app:srcCompat="@drawable/img" />
 
     <TextView
         android:id="@+id/textView2"
@@ -21,7 +14,7 @@
         android:layout_x="150dp"
         android:layout_y="180dp"
         android:text="LOGIN"
-        android:textColor="@color/Lavender"
+        android:textColor="#75D5CA"
         android:textSize="40dp"
         android:textStyle="bold" />
 
@@ -31,7 +24,7 @@
         android:layout_height="50dp"
         android:layout_x="45dp"
         android:layout_y="250dp"
-        android:background="@drawable/custom_btn2"
+        android:background="@drawable/custom_textfield"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -45,7 +38,7 @@
         android:layout_marginBottom="72dp"
         android:layout_x="45dp"
         android:layout_y="340dp"
-        android:background="@drawable/custom_btn2"
+        android:background="@drawable/custom_textfield"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -71,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="48dp"
-        android:layout_y="550dp"
+        android:layout_y="530dp"
         android:text="Dont't have account? "
         android:textColor="#000000"
         android:textSize="20dp" />
@@ -80,9 +73,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="240dp"
-        android:layout_y="550dp"
+        android:layout_y="530dp"
         android:text="Register Here ! "
-        android:textColor="@color/Lavender"
+        android:textColor="#75D5CA"
         android:textStyle="bold"
         android:textSize="20dp" />
 
@@ -117,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="200dp"
-        android:layout_y="590dp"
+        android:layout_y="570dp"
         android:textSize="15dp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -128,7 +121,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_x="80dp"
-        android:layout_y="630dp"
+        android:layout_y="610dp"
         app:srcCompat="@drawable/googlesigninbutton" />
 
 </AbsoluteLayout>

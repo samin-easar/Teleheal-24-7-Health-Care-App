@@ -4,34 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home"
+    android:background="@drawable/mbg"
     tools:context=".Home">
 
     <RelativeLayout
         android:id="@+id/profile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_x="300dp"
-        android:layout_y="50dp"
+        android:layout_y="60dp"
         android:background="@drawable/custom_btn"
         android:elevation="20dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="15dp"
+            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/user" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="42dp"
             android:layout_marginLeft="11dp"
             android:textStyle="bold"
-            android:textSize="8dp"
+            android:textSize="11dp"
             android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
             android:text=" Profile" />
     </RelativeLayout>
 
@@ -50,7 +52,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="45dp"
+            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/appointment" />
 
         <TextView
@@ -58,9 +60,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:layout_marginLeft="15dp"
             android:textStyle="bold"
             android:textSize="17dp"
+            android:layout_centerHorizontal="true"
             android:text="       Book\n Appointment" />
     </RelativeLayout>
     <RelativeLayout
@@ -78,7 +80,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/test" />
 
         <TextView
@@ -86,8 +88,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:layout_marginLeft="35dp"
             android:textStyle="bold"
+            android:layout_centerHorizontal="true"
             android:textSize="18dp"
             android:text="Lab Test" />
     </RelativeLayout>
@@ -106,7 +108,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/article" />
 
         <TextView
@@ -114,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:layout_marginLeft="40dp"
+            android:layout_centerHorizontal="true"
             android:textStyle="bold"
             android:textSize="18dp"
             android:text="Health \nArticle" />
@@ -134,7 +136,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/medicine" />
 
         <TextView
@@ -142,9 +144,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="72dp"
-            android:layout_marginLeft="30dp"
             android:textStyle="bold"
             android:textSize="17dp"
+            android:layout_centerHorizontal="true"
             android:text="     Buy\n Medicine" />
     </RelativeLayout>
     <RelativeLayout
@@ -162,7 +164,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
+            android:layout_centerHorizontal="true"
             app:srcCompat="@drawable/order" />
 
         <TextView
@@ -170,8 +172,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:layout_marginLeft="40dp"
             android:textStyle="bold"
+            android:layout_centerHorizontal="true"
             android:textSize="17dp"
             android:text="  Order\n Details" />
     </RelativeLayout>
@@ -188,16 +190,16 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="40dp"
             app:srcCompat="@drawable/bell" />
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="75dp"
-            android:layout_marginLeft="25dp"
             android:textStyle="bold"
             android:textSize="18dp"
             android:text=" Reminder" />
@@ -208,19 +210,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="20dp"
-        android:layout_y="50dp"
+        android:layout_y="60dp"
         android:textSize="40dp"
         android:textStyle="bold"
-        android:textColor="@color/Lavender"
+        android:textColor="@color/teal_700"
         android:text="TELEHEAL" />
 
     <Button
         android:id="@+id/logout"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_x="37dp"
-        android:layout_y="720dp"
+        android:layout_x="230dp"
+        android:layout_y="700dp"
         android:paddingLeft="-30dp"
+        android:textStyle="bold"
         android:background="@drawable/custom_btn2"
         android:text="Logout" />
 
@@ -228,8 +231,8 @@
         android:id="@+id/imageView8"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_x="120dp"
-        android:layout_y="730dp"
+        android:layout_x="320dp"
+        android:layout_y="710dp"
         app:srcCompat="@drawable/logout" />
 
 </AbsoluteLayout>

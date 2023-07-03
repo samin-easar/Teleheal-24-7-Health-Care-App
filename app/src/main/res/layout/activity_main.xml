@@ -1,76 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mainbg"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="117dp"
-        android:layout_y="320dp"
-        android:textColor="@color/Lavender"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#75D5CA"
         android:text="TELEHEAL"
+        android:elevation="50dp"
         android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="150dp"
-        android:layout_y="380dp"
+        android:layout_marginTop="360dp"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:text="24*7 Health Care"
         android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/logoimg"
         android:layout_width="299dp"
         android:layout_height="264dp"
-        android:layout_x="60dp"
-        android:layout_y="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         app:srcCompat="@drawable/logo" />
-
-    <ImageView
-        android:id="@+id/btnbg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_y="430dp"
-        android:rotation="180"
-        app:srcCompat="@drawable/bg" />
 
     <Button
         android:id="@+id/login"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_x="130dp"
-        android:gravity="center"
-        android:layout_y="600dp"
+        android:layout_marginTop="600dp"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:textSize="18dp"
        android:background="@drawable/custom_btn_transparent"
         android:text="LOGIN" />
     <Button
         android:id="@+id/signup"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_x="130dp"
-        android:layout_y="670dp"
         android:textColor="@color/white"
+        android:layout_marginTop="680dp"
+        android:layout_centerHorizontal="true"
         android:textStyle="bold"
+        android:textSize="18dp"
         android:background="@drawable/custom_btn_transparent"
         android:text="SIGNUP" />
 
-</AbsoluteLayout>
+</RelativeLayout>
