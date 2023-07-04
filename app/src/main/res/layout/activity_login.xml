@@ -99,10 +99,11 @@
         android:id="@+id/forgotpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="230dp"
+        android:layout_x="200dp"
         android:layout_y="400dp"
-        android:textSize="16dp"
+        android:textSize="20dp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="Forgot Password?" />
 
     <TextView

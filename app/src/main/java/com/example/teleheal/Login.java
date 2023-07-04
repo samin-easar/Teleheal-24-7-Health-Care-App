@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -38,6 +42,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class Login extends AppCompatActivity {
 
@@ -49,6 +54,7 @@ public class Login extends AppCompatActivity {
     FirebaseDatabase db;
     GoogleSignInClient gsigninClient;
     ProgressDialog pdialog;
+    TextView forgotpassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +70,52 @@ public class Login extends AppCompatActivity {
         password=findViewById(R.id.password);
         loginbtn=findViewById(R.id.loginbtn);
         googlesignin=findViewById(R.id.googlesignin);
+        forgotpassword=findViewById(R.id.forgotpass);
+
+        //Forgot Password
+        forgotpassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               AlertDialog.Builder builder= new AlertDialog.Builder(Login.this);
+               View dialogview = getLayoutInflater().inflate(R.layout.forgot_dialog,null);
+               EditText emailBox = dialogview.findViewById(R.id.emailBox);
+
+               builder.setView(dialogview);
+               AlertDialog dialog=builder.create();
+               dialogview.findViewById(R.id.reset).setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View view) {
+                       String userEmail= emailBox.getText().toString();
+                       if(TextUtils.isEmpty(userEmail) && !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
+                           Toast.makeText(Login.this,"Enter Your Registered Email",Toast.LENGTH_SHORT).show();
+                           return;
+                       }
+                       auth.sendPasswordResetEmail(userEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
+                           @Override
+                           public void onComplete(@NonNull Task<Void> task) {
+                               if(task.isSuccessful()){
+                                   Toast.makeText(Login.this,"Check Your Email",Toast.LENGTH_SHORT).show();
+                                   dialog.dismiss();
+                               }
+                               else{
+                                   Toast.makeText(Login.this,"Unable to Send , Try Again",Toast.LENGTH_SHORT).show();
+                               }
+                           }
+                       });
+                   }
+               });
+               dialogview.findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View view) {
+                       dialog.dismiss();
+                   }
+               });
+               if(dialog.getWindow()!=null){
+                   dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+               }
+               dialog.show();
+            }
+        });
 
         //Sign In  With Google
         auth=FirebaseAuth.getInstance();
