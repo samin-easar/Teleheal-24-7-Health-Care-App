@@ -90,6 +90,7 @@ public class Login extends AppCompatActivity {
                            Toast.makeText(Login.this,"Enter Your Registered Email",Toast.LENGTH_SHORT).show();
                            return;
                        }
+
                        auth.sendPasswordResetEmail(userEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
                            @Override
                            public void onComplete(@NonNull Task<Void> task) {

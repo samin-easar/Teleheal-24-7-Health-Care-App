@@ -13,7 +13,6 @@
         android:layout_marginTop="30dp"
         android:textSize="25dp"
         android:text="Forgot Password"
-        android:textStyle="bold"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:paddingLeft="20dp"
@@ -30,7 +29,6 @@
         android:background="@drawable/custom_textfield"
         android:hint="Enter Your Email"
         android:paddingLeft="10dp"
-        android:textStyle="bold"
         android:inputType="textEmailAddress" />
 
     <Button
@@ -38,8 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="190dp"
-        android:layout_marginLeft="80dp"
-        android:textStyle="bold"
+        android:layout_marginLeft="60dp"
         android:background="@drawable/custom_btn"
         android:text="Cancel" />
 
@@ -48,8 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="190dp"
-        android:layout_marginLeft="220dp"
-        android:textStyle="bold"
+        android:layout_marginLeft="200dp"
         android:background="@drawable/custom_btn"
         android:text="reset" />
 </RelativeLayout>
