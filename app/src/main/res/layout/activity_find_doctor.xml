@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mbg"
@@ -36,7 +41,7 @@
         android:layout_below="@id/appointtitle"
         android:layout_margin="20dp"
         android:columnCount="2"
-        android:rowCount="6">
+        android:rowCount="8">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/teeth"
@@ -104,7 +109,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NEURO"
+                    android:text="NEUROLOGIST"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"
@@ -143,7 +148,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NUTRICIAN"
+                    android:text="NUTRITIONIST"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"
@@ -182,7 +187,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PSYCHOTHERAPY"
+                    android:text="PSYCHOTHERAPIST"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textStyle="bold"
@@ -218,7 +223,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DENTAL"
+                    android:text="DENTIST"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:layout_gravity="center"
@@ -257,7 +262,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LUNGS"
+                    android:text="PULMONOLOGIST"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"
@@ -297,7 +302,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="GYNEA"
+                    android:text="OB/GYN"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:layout_gravity="center_horizontal"
@@ -374,7 +379,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="HEART"
+                    android:text="CARDIOLOGIST"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textStyle="bold"
@@ -382,8 +387,42 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_row="4"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+
+            android:layout_gravity="fill"
+            app:cardBackgroundColor="@color/teal_700"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BACK"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
 
     </GridLayout>
 
-
 </RelativeLayout>
+</ScrollView>
