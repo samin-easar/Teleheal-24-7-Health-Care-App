@@ -102,13 +102,12 @@ public class FindDoctor extends AppCompatActivity {
         });
 
         CardView back = findViewById(R.id.back);
-                back.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(FindDoctor.this, Home.class);
-
-                        startActivity(intent);
-                    }
-                });
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FindDoctor.this, Home.class);
+                startActivity(intent);
+            }
+        });
     }
 }

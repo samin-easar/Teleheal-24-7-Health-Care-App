@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Teleheal"
         tools:targetApi="31">
         <activity
+            android:name=".Alerter"
+            android:exported="false" />
+        <activity
             android:name=".DoctorDetails"
             android:exported="false" />
         <activity
@@ -41,6 +44,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <receiver android:name=".Alarm"
+            android:exported="true"
+            android:enabled="true"/>
+
     </application>
 
 </manifest>

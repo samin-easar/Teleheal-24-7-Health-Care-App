@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Home extends AppCompatActivity {
     Button logout;
 
-    RelativeLayout profile, findDoctor;
+    RelativeLayout profile, findDoctor, reminder;
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +61,17 @@ public class Home extends AppCompatActivity {
                // startActivity(new Intent(Home.this,Login.class));
             }
         });
+
+        reminder = findViewById(R.id.reminder);
+
+        reminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(new Intent(Home.this,Alerter.class));
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void signoutUser() {
