@@ -63,18 +63,15 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String passUsername=  getIntent().getStringExtra("passingUsername1"); //receive a string from Home class
-
                 Intent intent=new Intent(Profile.this,Home.class);
-                intent.putExtra("passingUsername",passUsername);  //pass a string to Profile class
                 startActivity(intent);
                 finish();
             }
         });
     }
     public void showuserdata(){
-        //receive a string from Home class
-        String userUsername = getIntent().getStringExtra("passingUsername1");
+
+        String userUsername = HelperClass.stringToPass;   //receive a string from Login class
 
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference("users");
         Query checkUserDatabase= reference.orderByChild("username").equalTo(userUsername);

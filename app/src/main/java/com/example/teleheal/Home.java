@@ -33,10 +33,12 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //receive a string from Login class
-                String passesUsername = getIntent().getStringExtra("passingUsername");
+                //100
+               // String passesUsername = getIntent().getStringExtra("passingUsername");
 
                 Intent intent=new Intent(Home.this,Profile.class);
-                intent.putExtra("passingUsername1",passesUsername);
+                //100
+                //intent.putExtra("passingUsername1",passesUsername);
                 startActivity(intent);
                 finish();
             }

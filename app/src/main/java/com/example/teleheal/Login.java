@@ -246,8 +246,11 @@ public class Login extends AppCompatActivity {
 
                         Toast.makeText(Login.this,"Login Successfully",Toast.LENGTH_LONG).show();
 
+                        //Pass a string to Profile
+                        HelperClass.stringToPass  = passUsername;
+                        startActivity(new Intent(Login.this, Profile.class));
+
                         Intent intent=new Intent(Login.this,Home.class);
-                        intent.putExtra("passingUsername",passUsername); //pass a string to Home class
                         startActivity(intent);
                         finish();
                     }else{

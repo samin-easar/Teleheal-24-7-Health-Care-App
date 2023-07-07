@@ -3,6 +3,9 @@ package com.example.teleheal;
 public class HelperClass {
     String email,fullname,username,password;
 
+    //Today
+    public static String stringToPass = " ";
+
     public String getEmail() {
         return email;
     }
