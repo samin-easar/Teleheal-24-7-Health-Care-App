@@ -33,6 +33,7 @@
         android:text="Username :"
         android:layout_marginTop="500dp"
         android:layout_marginLeft="30dp"
+        android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold" />
 
@@ -42,6 +43,7 @@
         android:layout_height="wrap_content"
        android:layout_marginTop="500dp"
         android:layout_marginLeft="160dp"
+        android:textColor="@color/black"
         android:textSize="25dp"
         android:text=" TextView" />
     <TextView
@@ -52,6 +54,7 @@
         android:layout_marginLeft="30dp"
         android:textStyle="bold"
         android:textSize="25dp"
+        android:textColor="@color/black"
         android:text="Email :" />
     <TextView
         android:id="@+id/dashboardemail"
@@ -60,6 +63,7 @@
         android:layout_marginTop="560dp"
         android:layout_marginLeft="105dp"
         android:textSize="25dp"
+        android:textColor="@color/black"
         android:text=" TextView" />
     <TextView
         android:id="@+id/textView8"
@@ -69,6 +73,7 @@
         android:textSize="25dp"
         android:layout_marginTop="620dp"
         android:layout_marginLeft="30dp"
+        android:textColor="@color/black"
         android:text="Password :" />
     <TextView
         android:id="@+id/dashboardpassword"
@@ -77,6 +82,7 @@
         android:textSize="25dp"
         android:layout_marginTop="620dp"
         android:layout_marginLeft="160dp"
+        android:textColor="@color/black"
         android:text=" TextView" />
 
     <Button

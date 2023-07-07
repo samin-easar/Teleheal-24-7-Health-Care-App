@@ -46,7 +46,7 @@
         </activity>
 
 
-        <receiver android:name=".Alarm"
+        <receiver android:name=".Alerter"
             android:exported="true"
             android:enabled="true"/>
 
