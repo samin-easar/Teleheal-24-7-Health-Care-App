@@ -8,11 +8,11 @@
     tools:context=".Alerter">
 
     <TimePicker
-        android:id="@+id/timepickerp"
+        android:id="@+id/timepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@color/Lavender"
+        android:background="@color/teal_200"
         android:layout_marginTop="180dp"
         />
 
@@ -20,7 +20,7 @@
     <Button
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/timepickerp"
+        android:layout_below="@id/timepicker"
         android:layout_centerHorizontal="true"
         android:background="@drawable/custom_btn"
         android:textColor="@color/white"
@@ -38,7 +38,7 @@
         android:background="@drawable/custom_btn"
         android:textColor="@color/white"
         android:layout_marginTop="20dp"
-        android:text="Exit"
+        android:text="Go Back"
         android:textSize="18dp"
         android:textStyle="bold"
         android:id="@+id/exit"

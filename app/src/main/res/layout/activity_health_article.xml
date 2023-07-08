@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mbg"
+    tools:context=".HealthArticle">
+
+
+    <TextView
+        android:id="@+id/textViewHATitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Health Articles"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_logo3"
+        app:layout_constraintVertical_bias="0.01999998"
+        />
+    <TextView
+        android:id="@+id/textView_logo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TELEHEALTH"
+        android:textColor="@color/teal_700"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045"
+        />
+    <ListView
+        android:id="@+id/listViewHA"
+        android:layout_width="344dp"
+        android:layout_height="523dp"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="-40dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewHATitle"
+        app:layout_constraintHorizontal_bias=".51"
+        app:layout_constraintStart_toStartOf="@+id/textViewHATitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHATitle"/>
+
+
+    
+    <Button
+        android:id="@+id/buttonHABack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

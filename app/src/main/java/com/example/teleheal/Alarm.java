@@ -15,5 +15,6 @@ public class Alarm extends BroadcastReceiver {
         MediaPlayer mp = MediaPlayer.create(context, Settings.System.DEFAULT_ALARM_ALERT_URI);
         mp.start();
         Toast.makeText(context,"WakeUp",Toast.LENGTH_LONG).show();
+
     }
 }
