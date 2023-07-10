@@ -29,8 +29,7 @@
         android:hint="Username"
         android:textColor="@color/black"
         android:inputType="textPersonName"
-        android:paddingLeft="50dp"
-        android:textColorHint="@color/black" />
+        android:paddingLeft="50dp" />
 
     <EditText
         android:id="@+id/password"
@@ -44,8 +43,7 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="@color/black"
-        android:paddingLeft="50dp"
-        android:textColorHint="@color/black" />
+        android:paddingLeft="50dp" />
 
     <Button
         android:id="@+id/loginbtn"

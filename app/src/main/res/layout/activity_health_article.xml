@@ -27,7 +27,7 @@
         android:id="@+id/textView_logo3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TELEHEALTH"
+        android:text="TELEHEAL"
         android:textColor="@color/teal_700"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -39,28 +39,32 @@
         />
     <ListView
         android:id="@+id/listViewHA"
-        android:layout_width="344dp"
-        android:layout_height="523dp"
+        android:layout_width="350dp"
+        android:layout_height="520dp"
         android:layout_marginStart="-40dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="-40dp"
+        android:dividerHeight="10dp"
         app:layout_constraintEnd_toEndOf="@+id/textViewHATitle"
         app:layout_constraintHorizontal_bias=".51"
         app:layout_constraintStart_toStartOf="@+id/textViewHATitle"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHATitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewHATitle">
+
+    </ListView>
 
 
-    
     <Button
         android:id="@+id/buttonHABack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:background="@drawable/custom_btn"
         android:text="BACK"
+        android:textSize="15dp"
         android:textStyle="bold"
-        android:textSize="20dp"
-        android:background="@color/teal_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,9 +58,9 @@ public class Home extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                auth.signOut();
+                FirebaseAuth.getInstance().signOut();
                 signoutUser();
-               // startActivity(new Intent(Home.this,Login.class));
+               //startActivity(new Intent(Home.this,Login.class));
             }
         });
 
@@ -86,7 +86,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void signoutUser() {
-        Intent intent=new Intent(Home.this,Login.class);
+        Intent intent=new Intent(Home.this,MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
