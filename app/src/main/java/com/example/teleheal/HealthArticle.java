@@ -21,7 +21,7 @@ public class HealthArticle extends AppCompatActivity {
     private String[][] health_details={
             {"Walking Daily", "", "", "", "Click More Details"},
             {"Home care of COVID", "", "", "", "Click More Details"},
-            {"Stop Smaking", "", "", "", "Click More Details"},
+            {"Stop Smoking", "", "", "", "Click More Details"},
             {"Menstrual Crxamps", "", "", "", "Click More Details"},
             {"Healthy Gut", "", "", "", "Click More Details"}
     };

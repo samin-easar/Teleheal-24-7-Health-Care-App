@@ -137,7 +137,7 @@ public class Login extends AppCompatActivity {
         });
 
 
-        //Credentials are being checked here
+        //Credentials are being checked here.
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -240,10 +240,9 @@ public class Login extends AppCompatActivity {
                 if(snapshot.exists()){
                     username.setError(null);
                     String passwordFromDB= snapshot.child(userUsername).child("password").getValue(String.class);
-                    //Objects.equals(passwordFromDB,userPassword
+                    //Objects.equals(passwordFromDB,userPassword)
                     if(passwordFromDB.equals(userPassword)){
                         username.setError(null);
-
                         Toast.makeText(Login.this,"Login Successfully",Toast.LENGTH_LONG).show();
 
                         //Pass a string to Profile

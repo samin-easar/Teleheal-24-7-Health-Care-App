@@ -65,8 +65,8 @@ public class Alerter extends AppCompatActivity implements View.OnClickListener{
     {
         AlarmManager alarmManager= (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this,Alarm.class);
-        PendingIntent pendingIntent=PendingIntent.getBroadcast(this,0,intent,0);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent);
+        //PendingIntent pendingIntent=PendingIntent.getBroadcast(this,0,intent,0);
+        //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent);
         Toast.makeText(this,"Your Alarm is Set",Toast.LENGTH_LONG).show();
     }
 }
