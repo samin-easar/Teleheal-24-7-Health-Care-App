@@ -7,15 +7,16 @@
     android:background="@drawable/home_btn">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/line_a"
         android:text="TextView"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:layout_marginLeft="20dp"
+        android:textSize="25sp" />
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/line_b"
         android:text="TextView"
@@ -53,9 +54,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/line_e"
             android:text="TextView"
-            android:textStyle="italic"
-            android:textColor="#ffff66"
-            android:textSize="12sp" />
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
     </LinearLayout>
 
 </LinearLayout>

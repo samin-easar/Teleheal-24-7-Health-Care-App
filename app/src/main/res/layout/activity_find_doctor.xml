@@ -69,7 +69,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/dental" />
+                    android:src="@drawable/tooth" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/neuro" />
+                    android:src="@drawable/brain" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -144,7 +144,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/nutrician" />
+                    android:src="@drawable/nutritionplan" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -183,7 +183,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/psychotherapy" />
+                    android:src="@drawable/selfcare" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -219,7 +219,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/dental" />
+                    android:src="@drawable/tooth" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -258,7 +258,7 @@
                     android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/lungs" />
+                    android:src="@drawable/pulmonology" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -298,7 +298,7 @@
                     android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/gynea" />
+                    android:src="@drawable/obstetrics" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -337,7 +337,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/veterinarian" />
+                    android:src="@drawable/vet" />
 
                 <TextView
                     android:layout_width="wrap_content"

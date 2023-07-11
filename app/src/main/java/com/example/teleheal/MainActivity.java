@@ -29,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
         signup=findViewById(R.id.signup);
         login=findViewById(R.id.login);
         logo=findViewById(R.id.logoimg);
-        //bg=findViewById(R.id.btnbg);
+       logo=findViewById(R.id.logoimg);
+        //b]g=findViewById(R.id.btnbg);
         title=findViewById(R.id.title);
         slogan=findViewById(R.id.subtitle);
 
