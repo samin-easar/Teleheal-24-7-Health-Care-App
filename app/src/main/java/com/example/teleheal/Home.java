@@ -28,6 +28,16 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+
+        labtest=findViewById(R.id.labtest);
+        labtest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this,LabTest.class);
+                startActivity(intent);
+            }
+        });
+
         medicine=findViewById(R.id.medicine);
         medicine.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,16 +67,6 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        /*labtest=findViewById(R.id.labtest);
-        labtest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(new Intent(Home.this,LabTest.class));
-                startActivity(intent);
-            }
-        });*/
 
         logout=(Button) findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {

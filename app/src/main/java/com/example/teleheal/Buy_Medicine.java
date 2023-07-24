@@ -20,13 +20,13 @@ public class Buy_Medicine extends AppCompatActivity {
 
     private  String[][] medicine=
             {
-                    {"Uprise-03 100IU Capsule","","","","50"},
-                    {"Vitamin B Complex Capsules ","","","","305"},
-                    {"Inlife Vitamin E ","","","","120"},
-                    {"Dolo 650 Tablet","","","","30"},
-                    {"Strepsils Medicated Lozenges for sore thorat","","","","240"},
-                    {"Feronia -XT Tablet","","","","130"},
-                    {"Crocin 650 Advance Tablet","","","","30"}
+                    {"Uprise-03 100IU Capsule","50"},
+                    {"Vitamin B Complex Capsules ","305"},
+                    {"Inlife Vitamin E ","120"},
+                    {"Dolo 650 Tablet","30"},
+                    {"Strepsils Medicated Lozenges for sore thorat","240"},
+                    {"Feronia -XT Tablet","130"},
+                    {"Crocin 650 Advance Tablet","30"}
             };
 
     private  String[]medicine_details={
@@ -68,16 +68,13 @@ public class Buy_Medicine extends AppCompatActivity {
         {
             item = new HashMap<String, String>();
             item.put("line1", medicine[i][0]);
-            item.put("line2", medicine[i][1]);
-            item.put("line3", medicine[i][2]);
-            item.put("line4", medicine[i][3]);
-            item.put("line5", "Price : "+medicine[i][4]+"/-");
+            item.put("line2", "Price : "+medicine[i][1]+" /- Tk");
 
             list.add(item);
         }
-        sa = new SimpleAdapter(this, list, R.layout.dd_multi_lines,
-                new String[]{"line1","line2","line3","line4","line5"},
-                new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
+        sa = new SimpleAdapter(this, list, R.layout.m_multi_lines,
+                new String[]{"line1","line2"},
+                new int[]{R.id.line_a, R.id.line_b});
         ListView lst = findViewById(R.id.listViewbm);
         lst.setAdapter(sa);
 
@@ -87,7 +84,7 @@ public class Buy_Medicine extends AppCompatActivity {
                 Intent it= new Intent(Buy_Medicine.this,Buy_Medicine_Details.class);
                 it.putExtra("text1",medicine[i][0]);
                 it.putExtra("text2",medicine_details[i]);
-                it.putExtra("text3",medicine[i][4]);
+                it.putExtra("text3",medicine[i][1]);
                 startActivity(it);
             }
         });

@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LabTest">
+    tools:context=".DoctorDetails"
+    android:background="@drawable/mbg">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="40dp"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        android:text="TELEHEAL" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titledd"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Lab Test Packages"/>
+
+    <ListView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="200dp"
+        android:id="@+id/listViewlt"
+        android:divider="#00FFFFFF"
+        android:dividerHeight="10dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="700dp"
+        android:layout_marginLeft="210dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_btn"
+        android:text="GO BACK"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
+
+</RelativeLayout>
