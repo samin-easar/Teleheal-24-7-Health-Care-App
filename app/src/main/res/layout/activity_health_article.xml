@@ -53,14 +53,16 @@
 
     </ListView>
 
+    buttonHABack
 
     <Button
         android:id="@+id/buttonHABack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/custom_btn"
-        android:text="BACK"
+        android:text="GO BACK"
+        android:textColor="@color/white"
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
