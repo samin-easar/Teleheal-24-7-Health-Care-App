@@ -19,11 +19,11 @@ import java.util.HashMap;
 public class HealthArticle extends AppCompatActivity {
 
     private String[][] health_details={
-            {"Walking Daily", "", "", "", "Click More Details"},
-            {"Home care of COVID", "", "", "", "Click More Details"},
-            {"Stop Smoking", "", "", "", "Click More Details"},
-            {"Menstrual Crxamps", "", "", "", "Click More Details"},
-            {"Healthy Gut", "", "", "", "Click More Details"}
+            {"Walking Daily", "", "", "", "Click For Details"},
+            {"Home care of COVID", "", "", "", "Click For Details"},
+            {"Stop Smoking", "", "", "", "Click For Details"},
+            {"Menstrual Crxamps", "", "", "", "Click For Details"},
+            {"Healthy Gut", "", "", "", "Click For Details"}
     };
     private int[] images ={
             R.drawable.health1,

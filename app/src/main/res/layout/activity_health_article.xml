@@ -45,6 +45,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="-40dp"
         android:dividerHeight="10dp"
+        android:divider="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/textViewHATitle"
         app:layout_constraintHorizontal_bias=".51"
         app:layout_constraintStart_toStartOf="@+id/textViewHATitle"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="@color/teal_700">
+    android:background="@drawable/home_btn2">
 
     <TextView
         android:id="@+id/line_a"
@@ -16,7 +16,7 @@
         android:textStyle="bold"
         />
     <TextView
-        android:id="@+id/line_"
+        android:id="@+id/line_b"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="TextView"
@@ -51,7 +51,7 @@
             />
 
         <TextView
-            android:id="@+id/line_d"
+            android:id="@+id/line_e"
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"

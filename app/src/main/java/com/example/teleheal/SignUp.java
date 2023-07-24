@@ -60,9 +60,6 @@ public class SignUp extends AppCompatActivity {
                 String Username=username.getText().toString();
                 String Password=password.getText().toString();
                 String RePAssword = repass.getText().toString();
-                if(Password != RePAssword){
-                    password.setError("Password Doesn't Match");
-                } else{
                     auth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -80,7 +77,7 @@ public class SignUp extends AppCompatActivity {
                 //reference.child(Username).setValue(helperClass);
 
                 //Toast.makeText(SignUp.this,"SignUp Successfully",Toast.LENGTH_LONG).show();
-            }
+
         });
 
         loginhere.setOnClickListener(new View.OnClickListener() {

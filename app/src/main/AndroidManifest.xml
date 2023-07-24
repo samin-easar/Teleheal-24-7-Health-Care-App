@@ -15,6 +15,12 @@
         android:theme="@style/Theme.Teleheal"
         tools:targetApi="31">
         <activity
+            android:name=".Buy_Medicine_Details"
+            android:exported="false" />
+        <activity
+            android:name=".Buy_Medicine"
+            android:exported="false" />
+        <activity
             android:name=".HealthArticle"
             android:exported="false" />
         <activity
@@ -54,7 +60,7 @@
         <receiver
             android:name=".Alarm"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>
