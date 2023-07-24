@@ -152,5 +152,19 @@ public class DoctorDetails extends AppCompatActivity {
         ListView lst = findViewById(R.id.listViewdd);
         lst.setAdapter(sa);
 
+        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent it = new Intent(DoctorDetails.this,Book_appointment.class);
+
+                it.putExtra("text1", title);
+                it.putExtra("text2", doctor_details[i][0]);
+                it.putExtra("text3", doctor_details[i][3]);
+                it.putExtra("text4", doctor_details[i][4]);
+
+                startActivity(it);
+            }
+        });
+
     }
 }

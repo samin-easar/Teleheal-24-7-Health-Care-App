@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Teleheal"
         tools:targetApi="31">
         <activity
+            android:name=".Book_appointment"
+            android:exported="false" />
+        <activity
             android:name=".Buy_Medicine_Details"
             android:exported="false" />
         <activity
