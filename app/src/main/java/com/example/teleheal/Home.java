@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Home extends AppCompatActivity {
     Button logout;
 
-    RelativeLayout profile, findDoctor, reminder,article,medicine;
+    RelativeLayout profile, findDoctor, reminder, article, medicine, labtest;
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +57,16 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /*labtest=findViewById(R.id.labtest);
+        labtest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(new Intent(Home.this,LabTest.class));
+                startActivity(intent);
+            }
+        });*/
 
         logout=(Button) findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
