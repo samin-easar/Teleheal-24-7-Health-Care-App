@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@drawable/mbg"
-    android:layout_height="match_parent">
     <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/mbg"
         tools:context=".DoctorDetails">
     <TextView
         android:id="@+id/textView"
@@ -32,10 +29,10 @@
         android:textColor="@color/black"
         android:text="Book Appointment"/>
 
-        <ListView
+        <view class="androidx.appcompat.app.AlertController$RecycleListView"
             android:id="@+id/listViewdd"
             android:layout_width="wrap_content"
-            android:layout_height="600dp"
+            android:layout_height="500dp"
             android:layout_below="@id/titledd"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
@@ -44,11 +41,12 @@
             android:divider="#00FFFFFF"
             android:dividerHeight="10dp" />
 
+
         <Button
             android:id="@+id/back"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="780dp"
+            android:layout_marginTop="700dp"
             android:layout_marginLeft="210dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/custom_btn"
@@ -57,5 +55,4 @@
             android:textStyle="bold"
             android:textSize="18dp"/>
 
-    </RelativeLayout>
-</ScrollView>
+</RelativeLayout>

@@ -29,7 +29,7 @@
         android:textColor="@color/black"
         android:text="Lab Test Packages"/>
 
-    <ListView
+    <view class="androidx.appcompat.app.AlertController$RecycleListView"
         android:layout_width="350dp"
         android:layout_height="450dp"
         android:layout_marginTop="200dp"
