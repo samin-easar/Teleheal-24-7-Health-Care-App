@@ -1,17 +1,28 @@
 package com.example.teleheal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,13 +49,14 @@ public class Buy_Medicine extends AppCompatActivity {
             "It acts as safegurd the skin from the harsh UVA and UVB sun rays.","Helps blocking fever and reliving pains of certain chemical mese.\n"
     };
     Button  back;
-
-    HashMap<String,String> item;
-    ArrayList list;
-    SimpleAdapter sa;
+    ListView listView;
+    private ArrayAdapter<String> adapter;
+    private ArrayList<String> dataList = new ArrayList<>();
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -61,33 +73,35 @@ public class Buy_Medicine extends AppCompatActivity {
             }
         });
 
-        //lst=findViewById(R.id.listViewbm);
-
-        list = new ArrayList();
-        for(int i = 0; i<medicine.length; i++)
-        {
-            item = new HashMap<String, String>();
-            item.put("line1", medicine[i][0]);
-            item.put("line2", "Price : "+medicine[i][1]+" /- Tk");
-
-            list.add(item);
-        }
-        sa = new SimpleAdapter(this, list, R.layout.m_multi_lines,
-                new String[]{"line1","line2"},
-                new int[]{R.id.line_a, R.id.line_b});
-        ListView lst = findViewById(R.id.listViewbm);
-        lst.setAdapter(sa);
-
-        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView=findViewById(R.id.listViewbm);
+        //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataList);
+        adapter = new ArrayAdapter<>(this, R.layout.m_multi_lines, dataList);
+        listView.setAdapter(adapter);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("medicines");
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent it= new Intent(Buy_Medicine.this,Buy_Medicine_Details.class);
-                it.putExtra("text1",medicine[i][0]);
-                it.putExtra("text2",medicine_details[i]);
-                it.putExtra("text3",medicine[i][1]);
-                startActivity(it);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                dataList.clear();
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    // Assuming your data is a string, you can change the class accordingly
+                    //dataList.add(snapshot.getValue().toString());
+                    Info data= snapshot.getValue(Info.class);
+                    String txt = "Name : "+data.getName()+"\n"+"Price : "+data.getPrice();
+                    dataList.add(txt);
+                }
+
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("TAG", "Database Error: " + databaseError.getMessage());
             }
         });
+
+
+
 
     }
 }

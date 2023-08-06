@@ -29,15 +29,18 @@
             android:textColor="@color/black"
             android:text="Medicines"/>
 
-        <view class="androidx.appcompat.app.AlertController$RecycleListView"
-            android:layout_width="350dp"
-            android:layout_height="450dp"
-            android:layout_marginTop="200dp"
-            android:id="@+id/listViewbm"
-            android:divider="#00FFFFFF"
-            android:dividerHeight="10dp"
-            android:layout_centerHorizontal="true"
-            />
+
+
+    <ListView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:dividerHeight="10dp"
+        android:divider="#00FFFFFF"
+        android:id="@+id/listViewbm"
+        />
+
 
         <Button
             android:id="@+id/back"
