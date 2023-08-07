@@ -29,12 +29,15 @@ public class Buy_Medicine_Details extends AppCompatActivity {
         mprice=findViewById(R.id.mprice);
         back=findViewById(R.id.back);
 
-        Intent intent=getIntent();
+        Intent intent = getIntent();
 
-        medicinename.setText(intent.getStringExtra("text1"));
-        mdetails.setText(intent.getStringExtra("text2"));
-        mprice.setText("Price : "+intent.getStringExtra("text3")+"/- Tk");
+        String name = intent.getStringExtra("name");
+        String price = intent.getStringExtra("price");
+        String details = intent.getStringExtra("details");
 
+        medicinename.setText(name);
+        mprice.setText("Price : "+price+"/- Tk");
+        mdetails.setText("Description : \n"+details);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -30,9 +30,9 @@ public class Lab_Test_Details extends AppCompatActivity {
         testname=findViewById(R.id.testname);
 
         Intent intent=getIntent();
-        testname.setText(intent.getStringExtra("text1"));
-        testdetails.setText(intent.getStringExtra("text2"));
-        testprice.setText("Price : "+intent.getStringExtra("text3")+"/- Tk");
+        testname.setText(intent.getStringExtra("name"));
+        testdetails.setText(intent.getStringExtra("details"));
+        testprice.setText("Price : "+intent.getStringExtra("price")+"/- Tk");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

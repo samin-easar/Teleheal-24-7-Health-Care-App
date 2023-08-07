@@ -9,7 +9,9 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -26,6 +28,36 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import android.content.Context;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+class ItemAdapter extends ArrayAdapter<Info> {
+
+    public ItemAdapter(Context context, List<Info> items) {
+        super(context, 0, items);
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            //convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.m_multi_lines, parent, false);
+        }
+
+        Info currentItem = getItem(position);
+
+        TextView titleTextView = convertView.findViewById(R.id.line_a);
+        TextView descriptionTextView = convertView.findViewById(R.id.line_b);
+
+        titleTextView.setText(currentItem.getName());
+        descriptionTextView.setText(currentItem.getPrice());
+
+        return convertView;
+    }
+}
 
 public class Buy_Medicine extends AppCompatActivity {
 
@@ -56,7 +88,6 @@ public class Buy_Medicine extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -72,26 +103,29 @@ public class Buy_Medicine extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    List<Info> itemlist;
+    ItemAdapter adapter1;
+    itemlist=new ArrayList<>();
+    adapter1= new ItemAdapter(this,itemlist);
+
 
         listView=findViewById(R.id.listViewbm);
-        //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dataList);
-        adapter = new ArrayAdapter<>(this, R.layout.m_multi_lines, dataList);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter1);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("medicines");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                dataList.clear();
+                itemlist.clear();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    // Assuming your data is a string, you can change the class accordingly
-                    //dataList.add(snapshot.getValue().toString());
-                    Info data= snapshot.getValue(Info.class);
-                    String txt = "Name : "+data.getName()+"\n"+"Price : "+data.getPrice();
-                    dataList.add(txt);
+
+                    Info info=snapshot.getValue(Info.class);
+                    if(info!=null){
+                        itemlist.add(info);
+                    }
                 }
 
-                adapter.notifyDataSetChanged();
+                adapter1.notifyDataSetChanged();
             }
 
             @Override
@@ -99,6 +133,21 @@ public class Buy_Medicine extends AppCompatActivity {
                 Log.e("TAG", "Database Error: " + databaseError.getMessage());
             }
         });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Info selectedItem= adapter1.getItem(i);
+                Intent it = new Intent(Buy_Medicine.this,Buy_Medicine_Details.class);
+                it.putExtra("name",selectedItem.getName());
+                it.putExtra("price",selectedItem.getPrice());
+                it.putExtra("details",selectedItem.getDetails());
+
+                startActivity(it);
+            }
+        });
+
+
 
 
 

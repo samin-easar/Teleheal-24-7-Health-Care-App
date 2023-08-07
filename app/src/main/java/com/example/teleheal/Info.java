@@ -4,13 +4,23 @@ public class Info {
 
     String name;
     String price;
+    String details;
 
     public Info() {
     }
 
-    public Info(String name, String price) {
+    public Info(String name, String price,String details) {
         this.name = name;
         this.price = price;
+        this.details=details;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 
     public String getName() {
