@@ -54,24 +54,7 @@ class ItemAdapter2 extends ArrayAdapter<Info> {
     }
 }
 public class LabTest extends AppCompatActivity {
-
     Button back;
-    private  String [][] tests={
-            {"Full Body CheckUp","1999"},
-            {"Blood Glucose Test","199"},
-            {"Liver Function Test","499"},
-            {"Thryoid Check","299"},
-            {"Antibody Check","149"},
-    };
-
-    private  String[] test_details={
-            "You want to live healthy? We have a guideline through all the meaningful service packages.\n"+"Comprehensive physical exams are essential in maintaining good health.\n"+
-                    "Regular health check-up can find problems before they start\n. Routine health check-up can help determine problems early with better chances .",
-            "A blood glucose test measures the level of glucose (sugar) in your blood. The test can involve a finger prick or a blood draw from your vein. Healthcare providers most commonly use blood glucose tests to screen for Type 2 diabetes, which is a common condition.",
-            "Liver function tests (also called LFTs) are blood tests that can provide information about how your liver is working. Your liver is a large organ in your abdomen (tummy) that has many different functions.",
-            "Thyroid tests tell your healthcare provider how well your thyroid gland works. These tests can help diagnose conditions like hyperthyroidism, hypothyroidism, Graves’ disease, Hashimoto’s disease and thyroid cancer. Types of thyroid tests include blood tests, imaging tests and nuclear medicine tests.",
-            "Antibody tests (serology tests) look for antibodies in your blood. Antibodies are proteins your immune system makes to fight infection. These tests help your provider confirm a diagnosis of a wide range of diseases, disorders and infections, including COVID-19. Talk to your provider about whether you need an antibody test."
-    };
     ListView listView;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> dataList = new ArrayList<>();
@@ -97,7 +80,6 @@ public class LabTest extends AppCompatActivity {
         ItemAdapter2 adapter1;
         itemlist=new ArrayList<>();
         adapter1= new ItemAdapter2(this,itemlist);
-
 
         listView=findViewById(R.id.listViewlt);
         listView.setAdapter(adapter1);
@@ -136,7 +118,5 @@ public class LabTest extends AppCompatActivity {
                 startActivity(it);
             }
         });
-
-
     }
 }

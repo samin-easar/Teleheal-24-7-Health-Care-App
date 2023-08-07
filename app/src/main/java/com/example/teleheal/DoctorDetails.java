@@ -2,44 +2,67 @@ package com.example.teleheal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+class DoctorAdapter extends ArrayAdapter<Info> {
+
+    public DoctorAdapter(Context context, List<Info> items) {
+        super(context, 0, items);
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            //convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.dd_multi_lines, parent, false);
+        }
+
+        Info currentItem = getItem(position);
+
+        TextView name = convertView.findViewById(R.id.line_a);
+        TextView designation = convertView.findViewById(R.id.line_b);
+        TextView chember = convertView.findViewById(R.id.line_c);
+        TextView contact = convertView.findViewById(R.id.line_d);
+        TextView fee = convertView.findViewById(R.id.line_e);
+
+        name.setText(currentItem.getDname());
+        designation.setText(currentItem.getDesignation());
+        chember.setText(currentItem.getChember());
+        contact.setText("Contact : "+currentItem.getContact());
+        fee.setText("Fee : "+currentItem.getFee());
+
+
+        return convertView;
+    }
+}
 public class DoctorDetails extends AppCompatActivity {
-    private String[][] dentist =
-            {
-                    {"NAME : Dr.Md.Imran Hossain", "HOSPITAL : Dental View Orthodontics & Implant Center", "Chief Consultant (Dental and Maxillofacial Surgery)", "CONTACT:+8801789280929", "500"},
-                    {"NAME : Dr.Md.Haider Ali Khan", "HOSPITAL : Dhaka Medical College & Hospital", "Senior Consultant and In Charge (Dentistry)", "CONTACT:+8801611957515", "500"},
-                    {"NAME : Dr Kamrun Nahar Sumi", "HOSPITAL : Ibn Sina Diagnostic Center, Uttara", "Oral, Dental & Maxillofacial Specialist Surgeon", "CONTACT: +8809610009612", "500"},
-                    {"NAME : Prof. Dr. B.A.K Azad", "HOSPITAL : Professor’s Dental Surgery", "Prosthodontist & Implantologist", "CONTACT: 01715157722", "500"},
-                    {"NAME : Assoc. Prof. Dr. Aslam Almehdi", "HOSPITAL : Royal Dental & Maxillofacial Surgery", "Dental & Orofacial Pain", "CONTACT: 01311863611", "500"},
-                    {"NAME : Dr. Priyanka Suma", "HOSPITAL : Dr. Priyanka's Dental Clinic", "Dental Surgeon", "CONTACT: 01629331999", "500"},
-                    {"NAME : Dr. Roksana Begum", "HOSPITAL : Ibn Sina Diagnostic Center, Dhanmondi", "Fillings, Root Canals, Extractions", "CONTACT: +8809610010615", "500"},
-                    {"NAME : Dr. Farzana Anar", "HOSPITAL : Ibn Sina Diagnostic Center, Uttara", "Conservative Dentistry & Endodotics Specialist", "CONTACT:  +8809610009612", "500"},
-            };
-    private String[][] neurologist =
-            {
-                    {"NAME : Prof. Dr. Quazi Deen Mohammad", "HOSPITAL : SPRC & Neurology Hospital", "Neurology & Medicine Specialist", "CONTACT: +8801765660811", "1000"},
-                    {"NAME : Prof. Dr. Md. Badrul Alam", "HOSPITAL : Central Hospital, Dhanmondi", "Brain, Stroke, Nerve & Migraine Specialist", "CONTACT: +88029660015", "1000"},
-                    {"NAME : Dr. Alim Akhtar Bhuiyan", "HOSPITAL : United Hospital, Dhaka", "Brain, Stroke, Epilepsy, Headache Specialist", "CONTACT: 10666", "1000"},
-                    {"NAME : Dr. Imran Sarker", "HOSPITAL : Islami Bank Hospital, Motijheel", "Parkinson's & Movement Disorder Specialist", "CONTACT: +8801727666741", "1000"},
-                    {"NAME : Dr. Rumana Habib", "HOSPITAL : Popular Diagnostic Center, Dhanmondi", "Brain, Nerve, Headache, Migraine & Medicine Specialist", "CONTACT:  +8809613787801", "1000"},
-                    {"NAME : Dr. Shamim Rashid", "HOSPITAL : Labaid Diagnostic, Malibagh", "Neurology & Medicine Specialist", "CONTACT: +8801766662555", "1000"},
-                    {"NAME : Dr. Sayeda Shabnam Malik", "HOSPITAL : Enam Medical College & Hospital", "Neurology Specialist", "CONTACT: +8801716358146", "1000"},
-                    {"NAME : Dr. Snigdha Sarker", "HOSPITAL : Lakecity Medical Limited", "Neurology Specialist", "CONTACT: +8801910020092", "1000"},
-            };
+
+
     private String[][] nutritionist =
             {
                     {"NAME : A", "HOSPITAL : Sapporo", "Experience: 5 yrs", "CONTACT:01718880690", "1000"},
@@ -90,10 +113,11 @@ public class DoctorDetails extends AppCompatActivity {
             };
     TextView tv;
     Button btn;
-    String[][] doctor_details = {};
-    HashMap<String, String> item;
-    ArrayList list;
-    SimpleAdapter sa;
+    String doctor_details ;
+    ListView listView;
+    private ArrayAdapter<String> adapter;
+    private ArrayList<String> dataList = new ArrayList<>();
+    private DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,21 +134,21 @@ public class DoctorDetails extends AppCompatActivity {
         tv.setText(title);
 
         if(title.compareTo("DENTIST")==0)
-            doctor_details = dentist;
+            doctor_details = "dentist";
         else if(title.compareTo("NEUROLOGIST")==0)
-            doctor_details = neurologist;
+            doctor_details = "neurologist";
         else if(title.compareTo("NUTRITIONIST")==0)
-            doctor_details = nutritionist;
+            doctor_details = "nutritionist";
         else if(title.compareTo("PSYCHOTHERAPIST")==0)
-            doctor_details = psychotherapist;
+            doctor_details = "psychotherapist";
         else if(title.compareTo("PULMONOLOGIST")==0)
-            doctor_details = pulmonologist;
+            doctor_details = "pulmonologist";
         else if(title.compareTo("OB/GYN")==0)
-            doctor_details = gyn;
+            doctor_details = "gyn";
         else if(title.compareTo("CARDIOLOGIST")==0)
-            doctor_details = cardiologist;
+            doctor_details = "cardiologist";
         else if(title.compareTo("VET")==0)
-            doctor_details = vet;
+            doctor_details = "vet";
 
         btn = findViewById(R.id.back);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -134,37 +158,50 @@ public class DoctorDetails extends AppCompatActivity {
             }
         });
 
-        list = new ArrayList();
-        for(int i = 0; i<doctor_details.length; i++)
-        {
-            item = new HashMap<String, String>();
-            item.put("line1", doctor_details[i][0]);
-            item.put("line2", doctor_details[i][1]);
-            item.put("line3", doctor_details[i][2]);
-            item.put("line4", doctor_details[i][3]);
-            item.put("line5", "Cons fees : "+doctor_details[i][4]+"/-");
+        List<Info> itemlist;
+        DoctorAdapter adapter1;
+        itemlist=new ArrayList<>();
+        adapter1= new DoctorAdapter(this,itemlist);
+        listView=findViewById(R.id.listViewdd);
+        listView.setAdapter(adapter1);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("doctors").child(doctor_details);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                itemlist.clear();
 
-            list.add(item);
-        }
-        sa = new SimpleAdapter(this, list, R.layout.dd_multi_lines,
-                new String[]{"line1","line2","line3","line4","line5"},
-                new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
-        ListView lst = findViewById(R.id.listViewdd);
-        lst.setAdapter(sa);
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
-        lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    Info info=snapshot.getValue(Info.class);
+                    if(info!=null){
+                        itemlist.add(info);
+                    }
+                }
+                adapter1.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("TAG", "Database Error: " + databaseError.getMessage());
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Info selectedItem= adapter1.getItem(i);
                 Intent it = new Intent(DoctorDetails.this,Book_appointment.class);
-
-                it.putExtra("text1", title);
-                it.putExtra("text2", doctor_details[i][0]);
-                it.putExtra("text3", doctor_details[i][3]);
-                it.putExtra("text4", doctor_details[i][4]);
+                it.putExtra("name",selectedItem.getDname());
+                //it.putExtra("designation",selectedItem.getDesignation());
+                //it.putExtra("chember",selectedItem.getChember());
+                it.putExtra("contact",selectedItem.getContact());
+                it.putExtra("fee",selectedItem.getFee());
 
                 startActivity(it);
             }
         });
+
+
 
     }
 }

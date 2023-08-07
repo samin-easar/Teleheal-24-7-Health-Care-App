@@ -4,39 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="@drawable/home_btn2">
+    android:background="@color/teal_200">
 
     <TextView
         android:id="@+id/line_a"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
          android:layout_width="match_parent"
         android:text="TextView"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="18dp"
         android:textStyle="bold"
         />
     <TextView
         android:id="@+id/line_b"
+        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="TextView"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="18dp"
         android:textStyle="bold"
         />
     <TextView
         android:id="@+id/line_c"
+        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="TextView"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="18dp"
         android:textStyle="bold"
         />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:weightSum="1">
         <TextView
             android:id="@+id/line_d"
@@ -46,7 +50,7 @@
 
             android:text="TextView"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="15dp"
             android:textStyle="bold"
             />
 
@@ -58,7 +62,7 @@
 
             android:text="TextView"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="15dp"
             android:textStyle="bold"
             />
     </LinearLayout>

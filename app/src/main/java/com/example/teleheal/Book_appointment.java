@@ -49,12 +49,12 @@ public class Book_appointment extends AppCompatActivity {
         ed3.setKeyListener(null);
 
         Intent intent = getIntent();
-        String title = intent.getStringExtra("text1");
-        String fullname = intent.getStringExtra("text2");
-        String contact = intent.getStringExtra("text3");
-        String fees = intent.getStringExtra("text4");
+        //String title = intent.getStringExtra("name");
+        String fullname = intent.getStringExtra("name");
+        String contact = intent.getStringExtra("contact");
+        String fees = intent.getStringExtra("fee");
 
-        tv.setText(title);
+        //tv.setText(title);
         ed1.setText(fullname);
         ed2.setText(contact);
         ed3.setText("Cons Fees: "+fees+"/-");

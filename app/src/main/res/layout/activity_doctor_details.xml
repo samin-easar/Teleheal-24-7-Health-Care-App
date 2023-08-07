@@ -29,7 +29,7 @@
         android:textColor="@color/black"
         android:text="Book Appointment"/>
 
-        <view class="androidx.appcompat.app.AlertController$RecycleListView"
+        <ListView
             android:id="@+id/listViewdd"
             android:layout_width="wrap_content"
             android:layout_height="500dp"

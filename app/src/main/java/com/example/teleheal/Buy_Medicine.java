@@ -61,25 +61,9 @@ class ItemAdapter extends ArrayAdapter<Info> {
 
 public class Buy_Medicine extends AppCompatActivity {
 
-    private  String[][] medicine=
-            {
-                    {"Uprise-03 100IU Capsule","50"},
-                    {"Vitamin B Complex Capsules ","305"},
-                    {"Inlife Vitamin E ","120"},
-                    {"Dolo 650 Tablet","30"},
-                    {"Strepsils Medicated Lozenges for sore thorat","240"},
-                    {"Feronia -XT Tablet","130"},
-                    {"Crocin 650 Advance Tablet","30"}
-            };
 
-    private  String[]medicine_details={
-            "Building and Keeping the bones & teeth string\n"+"Reducing Fatigues/Stress and musculer pains.\n",
-                    "Boosting Immunity and increasing resistance against infection","Chromium is an essential trace mineral that plays an important role in helping insulin regularly",
-            "Provides relief from vitamin b deficencies\n"+"Helps in formation of red blood.\n",
-                    "Maintains healthy nervous system"+"It promotes health as well as skin benefit.\n",
-            "It helps reduce skin blemish and pigmentation.\n",
-            "It acts as safegurd the skin from the harsh UVA and UVB sun rays.","Helps blocking fever and reliving pains of certain chemical mese.\n"
-    };
+
+
     Button  back;
     ListView listView;
     private ArrayAdapter<String> adapter;
@@ -142,15 +126,8 @@ public class Buy_Medicine extends AppCompatActivity {
                 it.putExtra("name",selectedItem.getName());
                 it.putExtra("price",selectedItem.getPrice());
                 it.putExtra("details",selectedItem.getDetails());
-
                 startActivity(it);
             }
         });
-
-
-
-
-
-
     }
 }
