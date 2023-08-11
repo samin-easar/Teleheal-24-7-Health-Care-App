@@ -33,8 +33,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:textColor="@color/teal_700"
-        android:text="Book Appointment"/>
+        android:text="Top Doctors"/>
 
     <GridLayout
         android:layout_width="match_parent"

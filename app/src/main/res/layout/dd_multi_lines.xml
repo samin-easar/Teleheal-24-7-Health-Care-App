@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="@color/teal_200">
+    android:background="@drawable/home_btn">
 
     <TextView
         android:id="@+id/line_a"
         android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-         android:layout_width="match_parent"
+         android:layout_width="wrap_content"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="18dp"
@@ -18,9 +19,10 @@
         />
     <TextView
         android:id="@+id/line_b"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="40dp"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="18dp"
@@ -28,42 +30,13 @@
         />
     <TextView
         android:id="@+id/line_c"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
         />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:weightSum="1">
-        <TextView
-            android:id="@+id/line_d"
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-
-            android:text="TextView"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            />
-
-        <TextView
-            android:id="@+id/line_e"
-            android:layout_width="0dp"
-            android:layout_weight="0.5"
-            android:layout_height="wrap_content"
-
-            android:text="TextView"
-            android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            />
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

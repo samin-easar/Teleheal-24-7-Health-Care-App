@@ -1,43 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DoctorDetails"
-    android:background="@drawable/mbg">
+    android:background="@drawable/mbg"
+    tools:context=".Cart">
+
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="TELEHEAL"
+        android:textColor="@color/teal_200"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
+        android:textStyle="bold"
         android:textSize="40dp"
-        android:textColor="@color/teal_700"
-        android:textStyle="bold"
-        android:text="TELEHEAL" />
-
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/titledd"
-        android:layout_marginTop="100dp"
+        android:text="Your Orders"
+        android:layout_marginTop="120dp"
         android:layout_centerHorizontal="true"
-        android:textSize="25dp"
         android:textStyle="bold"
-        android:text="Lab Test Packages"/>
-
-    <ListView
-        android:layout_width="350dp"
-        android:layout_height="450dp"
-        android:layout_marginTop="200dp"
-        android:id="@+id/listViewlt"
-        android:divider="#00FFFFFF"
-        android:dividerHeight="10dp"
-        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
         />
 
+    <ListView
+        android:id="@+id/listViewdd"
+        android:layout_width="350dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="400dp"
+        android:layout_marginTop="200dp"
+        android:divider="#00FFFFFF"
+        android:dividerHeight="10dp" />
     <Button
         android:id="@+id/back"
         android:layout_width="160dp"

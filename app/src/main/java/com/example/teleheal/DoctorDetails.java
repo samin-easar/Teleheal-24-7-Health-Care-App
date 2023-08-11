@@ -46,16 +46,15 @@ class DoctorAdapter extends ArrayAdapter<Info> {
 
         TextView name = convertView.findViewById(R.id.line_a);
         TextView designation = convertView.findViewById(R.id.line_b);
-        TextView chember = convertView.findViewById(R.id.line_c);
-        TextView contact = convertView.findViewById(R.id.line_d);
-        TextView fee = convertView.findViewById(R.id.line_e);
+        //TextView chember = convertView.findViewById(R.id.line_c);
+        TextView contact = convertView.findViewById(R.id.line_c);
+        //TextView fee = convertView.findViewById(R.id.line_e);
 
         name.setText(currentItem.getDname());
         designation.setText(currentItem.getDesignation());
-        chember.setText(currentItem.getChember());
+        //chember.setText(currentItem.getChember());
         contact.setText("Contact : "+currentItem.getContact());
-        fee.setText("Fee : "+currentItem.getFee());
-
+        //fee.setText("Fee : "+currentItem.getFee());
 
         return convertView;
     }
@@ -193,7 +192,7 @@ public class DoctorDetails extends AppCompatActivity {
                 Intent it = new Intent(DoctorDetails.this,Book_appointment.class);
                 it.putExtra("name",selectedItem.getDname());
                 //it.putExtra("designation",selectedItem.getDesignation());
-                //it.putExtra("chember",selectedItem.getChember());
+                it.putExtra("chember",selectedItem.getChember());
                 it.putExtra("contact",selectedItem.getContact());
                 it.putExtra("fee",selectedItem.getFee());
 

@@ -26,7 +26,6 @@
             android:layout_centerHorizontal="true"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
             android:text="Medicines"/>
 
 

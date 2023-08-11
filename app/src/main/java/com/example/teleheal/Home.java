@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Home extends AppCompatActivity {
     Button logout;
 
-    RelativeLayout profile, findDoctor, reminder, article, medicine, labtest;
+    RelativeLayout profile, findDoctor, reminder, article, medicine, labtest,order;
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,15 @@ public class Home extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_home);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        order=findViewById(R.id.order);
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this,Cart.class);
+                startActivity(intent);
+            }
+        });
 
 
         labtest=findViewById(R.id.labtest);

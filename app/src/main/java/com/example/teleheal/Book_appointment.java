@@ -21,7 +21,7 @@ import java.util.Calendar;
 
 public class Book_appointment extends AppCompatActivity {
 
-    EditText ed1, ed2, ed3;
+    EditText ed1, ed2, ed3,chember;
     TextView tv;
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
@@ -43,6 +43,7 @@ public class Book_appointment extends AppCompatActivity {
         time = findViewById(R.id.timepick);
         regbtn = findViewById(R.id.appregister);
         backbtn = findViewById(R.id.back);
+        chember=findViewById(R.id.chember);
 
         ed1.setKeyListener(null);
         ed2.setKeyListener(null);
@@ -53,11 +54,13 @@ public class Book_appointment extends AppCompatActivity {
         String fullname = intent.getStringExtra("name");
         String contact = intent.getStringExtra("contact");
         String fees = intent.getStringExtra("fee");
+        String chmbr = intent.getStringExtra("chember");
 
         //tv.setText(title);
         ed1.setText(fullname);
         ed2.setText(contact);
         ed3.setText("Cons Fees: "+fees+"/-");
+        chember.setText(chmbr);
 
         //date
         initDatePicker();

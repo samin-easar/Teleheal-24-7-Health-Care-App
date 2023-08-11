@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Teleheal"
         tools:targetApi="31">
         <activity
+            android:name=".Cart"
+            android:exported="false" />
+        <activity
             android:name=".Lab_Test_Details"
             android:exported="false" />
         <activity
