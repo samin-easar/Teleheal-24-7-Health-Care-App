@@ -28,7 +28,7 @@
         />
 
     <ListView
-        android:id="@+id/listViewdd"
+        android:id="@+id/cartlist"
         android:layout_width="350dp"
         android:layout_centerHorizontal="true"
         android:layout_height="400dp"

@@ -1,5 +1,6 @@
 package com.example.teleheal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,10 +11,21 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class Buy_Medicine_Details extends AppCompatActivity {
     TextView medicinename,mdetails,mprice;
-    Button back;
+    Button back,addmedicine;
+    String name,price;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference productsRef = database.getReference("products");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +43,8 @@ public class Buy_Medicine_Details extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String name = intent.getStringExtra("name");
-        String price = intent.getStringExtra("price");
+        name = intent.getStringExtra("name");
+        price = intent.getStringExtra("price");
         String details = intent.getStringExtra("details");
 
         medicinename.setText(name);
@@ -45,5 +57,43 @@ public class Buy_Medicine_Details extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+        addmedicine=findViewById(R.id.addmedicine);
+        addmedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addProductToCart();
+            }
+        });
+
+    }
+
+    private void addProductToCart() {
+        final String productname = name;
+        final String productPrice = price;
+        Query productQuery = productsRef.orderByChild("name").equalTo(productname);
+        productQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                {
+                    Toast.makeText(Buy_Medicine_Details.this,"Product Already Added ", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Info product = new Info(name,price);
+                    productsRef.push().setValue(product);
+
+                    Toast.makeText(Buy_Medicine_Details.this,"Product Added To Cart",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 }

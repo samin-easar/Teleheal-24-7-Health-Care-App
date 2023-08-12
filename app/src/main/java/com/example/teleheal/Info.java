@@ -64,6 +64,11 @@ public class Info {
         this.details=details;
     }
 
+    public Info(String name, String price) {
+        this.name = name;
+        this.price = price;
+    }
+
     public String getDetails() {
         return details;
     }
