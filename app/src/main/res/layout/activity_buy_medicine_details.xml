@@ -22,11 +22,12 @@
             android:text="TELEHEAL" />
         <TextView
             android:id="@+id/mdetails"
-            android:layout_width="350dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
             android:textColor="@color/black"
-            android:textSize="30dp"
+
+            android:textSize="25dp"
             android:layout_centerHorizontal="true"/>
         <TextView
             android:id="@+id/mprice"
@@ -57,7 +58,7 @@
             android:layout_marginLeft="230dp"
             android:background="@drawable/custom_btn"
             android:text="GO BACK"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="18dp"/>
         <Button
@@ -68,7 +69,7 @@
             android:layout_marginLeft="30dp"
             android:background="@drawable/custom_btn"
             android:text="Add to Cart"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="18dp"/>
 

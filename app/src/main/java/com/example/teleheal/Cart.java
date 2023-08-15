@@ -75,9 +75,6 @@ public class Cart extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        ImageView deleteP = findViewById(R.id.deleteP);
-
-
         List<Info> itemlist;
         ProductAdapter adapter1;
         itemlist=new ArrayList<>();
