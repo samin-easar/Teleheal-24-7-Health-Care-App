@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,6 +31,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ProductAdapter extends ArrayAdapter<Info> {
+
+    ImageView delete;
     public ProductAdapter(Context context, List<Info> items) {
         super(context, 0, items);
     }
@@ -41,24 +42,25 @@ class ProductAdapter extends ArrayAdapter<Info> {
         if (convertView == null) {
             //convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
             convertView= LayoutInflater.from(getContext()).inflate(R.layout.cart,parent,false);
+
         }
 
         Info currentItem = getItem(position);
         TextView titleTextView = convertView.findViewById(R.id.pname);
         TextView priceTextView = convertView.findViewById(R.id.pprice);
-
+        delete= convertView.findViewById(R.id.deleteP);
 
         titleTextView.setText(currentItem.getName());
         priceTextView.setText("Price : "+currentItem.getPrice()+" /");
 
-
-        
-
         return convertView;
     }
-}
 
+}
 public class Cart extends AppCompatActivity {
+    String userUsername = HelperClass.stringToPass;
+
+    ImageView deleteP;
 
     Button back;
     ListView listView;
@@ -81,9 +83,13 @@ public class Cart extends AppCompatActivity {
         adapter1= new ProductAdapter(this,itemlist);
         listView=findViewById(R.id.cartlist);
         listView.setAdapter(adapter1);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("products");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("products").child(userUsername);
 
-        String key = databaseReference.getKey();
+        final String[] key = new String[1];
+
+        ImageView deleteP = adapter1.delete;
+
+
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -92,6 +98,9 @@ public class Cart extends AppCompatActivity {
                 itemlist.clear();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+
+                    String productKey= snapshot.getKey();
+                    key[0] =productKey;
 
                     Info info=snapshot.getValue(Info.class);
                     if(info!=null){

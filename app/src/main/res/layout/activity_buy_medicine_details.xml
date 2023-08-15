@@ -59,7 +59,6 @@
             android:background="@drawable/custom_btn"
             android:text="GO BACK"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="18dp"/>
         <Button
             android:id="@+id/addmedicine"
@@ -70,7 +69,6 @@
             android:background="@drawable/custom_btn"
             android:text="Add to Cart"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="18dp"/>
 
     </RelativeLayout>

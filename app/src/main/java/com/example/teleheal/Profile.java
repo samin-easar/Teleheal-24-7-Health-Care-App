@@ -46,7 +46,6 @@ public class Profile extends AppCompatActivity {
         uemail=findViewById(R.id.dashboardemail);
         upassword=findViewById(R.id.dashboardpassword);
         homebtn=findViewById(R.id.home);
-
         button=findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {

@@ -21,11 +21,13 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class Lab_Test_Details extends AppCompatActivity {
+
+    String userUsername = HelperClass.stringToPass;
     TextView testdetails,testprice,testname;
     String testName,testPrice;
     Button back,addTest;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference productsRef = database.getReference("products");
+    DatabaseReference productsRef = database.getReference("products").child(userUsername);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,8 @@ public class Lab_Test_Details extends AppCompatActivity {
                 }
                 else{
                     Info product = new Info(testName,testPrice);
+                    //productsRef.child("name").setValue(product.getName());
+                    //productsRef.child("price").setValue(product.getPrice());
                     productsRef.push().setValue(product);
 
                     Toast.makeText(Lab_Test_Details.this,"Product Added To Cart",Toast.LENGTH_SHORT).show();

@@ -21,11 +21,13 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class Buy_Medicine_Details extends AppCompatActivity {
+
+    String userUsername = HelperClass.stringToPass;
     TextView medicinename,mdetails,mprice;
     Button back,addmedicine;
     String name,price;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference productsRef = database.getReference("products");
+    DatabaseReference productsRef = database.getReference("products").child(userUsername);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
