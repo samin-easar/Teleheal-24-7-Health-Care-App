@@ -11,13 +11,17 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Home extends AppCompatActivity {
+
+    String userUsername = HelperClass.stringToPass;
     Button logout;
 
-    RelativeLayout profile, findDoctor, reminder, article, medicine, labtest,order;
+    TextView username;
+    RelativeLayout profile, findDoctor, reminder, article, medicine, labtest,order,emergency;
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,15 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        emergency= findViewById(R.id.emergency);
+        emergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this,Emergency.class);
+                startActivity(intent);
+            }
+        });
+
         order=findViewById(R.id.order);
         order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +50,8 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        username = findViewById(R.id.username);
+        username.setText(userUsername);
 
         labtest=findViewById(R.id.labtest);
         labtest.setOnClickListener(new View.OnClickListener() {

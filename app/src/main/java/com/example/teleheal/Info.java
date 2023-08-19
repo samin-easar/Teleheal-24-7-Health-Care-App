@@ -7,12 +7,40 @@ public class Info {
     String details;
     String dname,contact,chember,designation,fee;
 
+    String date,time;
+
     public Info(String dname, String contact, String chember, String designation, String fee) {
         this.dname = dname;
         this.contact = contact;
         this.chember = chember;
         this.designation = designation;
         this.fee = fee;
+    }
+
+    public Info(String dname, String contact, String chember, String designation, String fee, String date, String time) {
+        this.dname = dname;
+        this.contact = contact;
+        this.chember = chember;
+        this.designation = designation;
+        this.fee = fee;
+        this.date = date;
+        this.time = time;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getDname() {

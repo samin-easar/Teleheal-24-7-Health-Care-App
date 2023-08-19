@@ -195,6 +195,7 @@ public class DoctorDetails extends AppCompatActivity {
                 it.putExtra("chember",selectedItem.getChember());
                 it.putExtra("contact",selectedItem.getContact());
                 it.putExtra("fee",selectedItem.getFee());
+                it.putExtra("desig",selectedItem.getDesignation());
 
                 startActivity(it);
             }

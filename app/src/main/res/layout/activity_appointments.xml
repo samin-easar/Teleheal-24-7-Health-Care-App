@@ -5,47 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mbg"
-    tools:context=".Cart">
+    tools:context=".Appointments">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TELEHEAL"
-        android:textColor="@color/teal_200"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:textColor="@color/teal_700"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
+        />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:layout_marginTop="130dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        android:textSize="40dp"
+        android:layout_marginLeft="50dp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your Orders"
-        android:layout_marginTop="120dp"
+        android:text=" , Your Appointments"
+        android:layout_marginTop="130dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="150dp"
+        />
+    <ListView
+        android:layout_width="350dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textSize="25dp"
+        android:id="@+id/appointmentList"
+        android:divider="#00FFFFFF"
+        android:dividerHeight="10dp"
         />
 
-    <ListView
-        android:id="@+id/cartlist"
-        android:layout_width="350dp"
-        android:layout_centerHorizontal="true"
-        android:layout_height="400dp"
-        android:layout_marginTop="200dp"
-        android:divider="#00FFFFFF"
-        android:dividerHeight="10dp" />
     <Button
         android:id="@+id/back"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="700dp"
-        android:layout_marginLeft="210dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/custom_btn"
-        android:text="BACK"
+        android:layout_marginTop="750dp"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        android:text="Back" />
+
 
 </RelativeLayout>

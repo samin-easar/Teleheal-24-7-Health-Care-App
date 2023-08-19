@@ -42,6 +42,7 @@
         android:id="@+id/buttonHADBack"
         android:text="BACK"
         android:textStyle="bold"
+        android:textColor="@color/white"
         android:background="@drawable/custom_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

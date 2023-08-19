@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Nearby_Hospitals">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_height="match_parent"
+        tools:layout="@layout/activity_nearby_hospitals"
+        />
+
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/searchView"
+        app:queryHint="Search Hospitals"
+        android:hint="Search Hospitals"
+        android:focusable="false"
+        app:searchIcon="@drawable/baseline_location_on_24"
+        app:closeIcon="@drawable/baseline_close_24"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/searchbg"
+
+        />
+
+
+</RelativeLayout>

@@ -58,8 +58,8 @@
             android:layout_marginTop="700dp"
             android:layout_marginLeft="230dp"
             android:background="@drawable/custom_btn"
-            android:text="GO BACK"
-            android:textColor="@color/black"
+            android:text="BACK"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="18dp"/>
         <Button
@@ -70,7 +70,7 @@
             android:layout_marginLeft="30dp"
             android:background="@drawable/custom_btn"
             android:text="Add To Cart"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="18dp"/>
 

@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class Profile extends AppCompatActivity {
     Button homebtn,button;
     FirebaseUser user;
     DatabaseReference ref;
+    RelativeLayout appointment;
     String userID;
 
     @Override
@@ -47,6 +49,15 @@ public class Profile extends AppCompatActivity {
         upassword=findViewById(R.id.dashboardpassword);
         homebtn=findViewById(R.id.home);
         button=findViewById(R.id.button);
+
+        appointment= findViewById(R.id.appointments);
+        appointment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile.this,Appointments.class);
+                startActivity(intent);
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

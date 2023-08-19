@@ -51,6 +51,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/appointments"
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:background="@drawable/home_btn"
@@ -136,25 +137,25 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="700dp"
         android:layout_marginLeft="25dp"
         android:background="@drawable/custom_btn"
         android:text="Edit profile"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="16dp" />
 
     <Button
         android:id="@+id/home"
-        android:layout_width="160dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="700dp"
         android:layout_marginLeft="210dp"
         android:background="@drawable/custom_btn"
-        android:text="GO BACK"
-        android:textColor="@color/black"
+        android:text="BACK"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="16dp"/>
 </RelativeLayout>

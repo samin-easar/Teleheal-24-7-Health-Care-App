@@ -60,7 +60,7 @@ public class Buy_Medicine_Details extends AppCompatActivity {
             }
         });
 
-
+        //Adding Products to Cart
 
         addmedicine=findViewById(R.id.addmedicine);
         addmedicine.setOnClickListener(new View.OnClickListener() {

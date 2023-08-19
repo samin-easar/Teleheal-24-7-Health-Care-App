@@ -1,5 +1,6 @@
 package com.example.teleheal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -16,21 +17,35 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
 public class Book_appointment extends AppCompatActivity {
 
-    EditText ed1, ed2, ed3,chember;
+    String userUsername = HelperClass.stringToPass;
+
+    EditText ed1, ed2, ed3, chember;
     TextView tv;
+    String dt,tm,fullname,contact,fees,chmbr,desig;
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
     private Button date, time, regbtn, backbtn;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference appointmentRef = database.getReference("appointments").child(userUsername);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_book_appointment);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -43,7 +58,7 @@ public class Book_appointment extends AppCompatActivity {
         time = findViewById(R.id.timepick);
         regbtn = findViewById(R.id.appregister);
         backbtn = findViewById(R.id.back);
-        chember=findViewById(R.id.chember);
+        chember = findViewById(R.id.chember);
 
         ed1.setKeyListener(null);
         ed2.setKeyListener(null);
@@ -51,20 +66,20 @@ public class Book_appointment extends AppCompatActivity {
 
         Intent intent = getIntent();
         //String title = intent.getStringExtra("name");
-        String fullname = intent.getStringExtra("name");
-        String contact = intent.getStringExtra("contact");
-        String fees = intent.getStringExtra("fee");
-        String chmbr = intent.getStringExtra("chember");
+        fullname = intent.getStringExtra("name");
+        contact = intent.getStringExtra("contact");
+        fees = intent.getStringExtra("fee");
+        chmbr = intent.getStringExtra("chember");
+        desig = intent.getStringExtra("desig");
 
         //tv.setText(title);
         ed1.setText(fullname);
         ed2.setText(contact);
-        ed3.setText("Cons Fees: "+fees+"/-");
+        ed3.setText("Cons Fees: " + fees + "/-");
         chember.setText(chmbr);
 
         //date
         initDatePicker();
-
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,7 +89,6 @@ public class Book_appointment extends AppCompatActivity {
 
         //time
         initTimePicker();
-
         time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,21 +104,55 @@ public class Book_appointment extends AppCompatActivity {
             }
         });
 
-        /*regbtn.setOnClickListener(new View.OnClickListener() {
+        regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                registration();
+
             }
-        });*/
+        });
     }
 
-    private void initDatePicker(){
+    private void registration() {
+        final String dname = fullname;
+        final String dfee = fees;
+        final String dcontact = contact;
+        final String dchember = chmbr;
+        final String ddesig = desig;
+        final String rtime = tm;
+        final String rdate = dt;
+        Query productQuery = appointmentRef.orderByChild("dname").equalTo(dname);
+        productQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                {
+                    Toast.makeText(Book_appointment.this,"Appointment Already Taken", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Info product = new Info(dname,dcontact,dchember,ddesig,dfee,rdate,rtime);
+                    appointmentRef.push().setValue(product);
+
+                    Toast.makeText(Book_appointment.this,"Appointment Registred Successfully",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void initDatePicker() {
 
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                 i1 = i1 + 1;
                 date.setText(i2 + "/" + i1 + "/" + i);
+                dt= (String) date.getText();
             }
         };
 
@@ -115,16 +163,17 @@ public class Book_appointment extends AppCompatActivity {
 
         int style = AlertDialog.THEME_HOLO_DARK;
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-        datePickerDialog.getDatePicker().setMinDate(cal.getTimeInMillis()+86400000);
+        datePickerDialog.getDatePicker().setMinDate(cal.getTimeInMillis() + 86400000);
     }
 
-    private void initTimePicker(){
+    private void initTimePicker() {
 
         TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int i, int i1) {
                 i1 = i1 + 1;
                 time.setText(i + " : " + i1);
+                tm= String.valueOf(time.getText());
             }
         };
 
@@ -137,4 +186,6 @@ public class Book_appointment extends AppCompatActivity {
         timePickerDialog = new TimePickerDialog(this, style, timeSetListener, hrs, mins, true);
 
     }
+
+
 }

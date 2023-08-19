@@ -9,46 +9,66 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="#dcf1ee">
+        android:layout_height="140dp"
+        >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome , "
+            android:textSize="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username "
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="122dp"
+            android:textColor="@color/black"
+            />
         <RelativeLayout
             android:id="@+id/profile"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="300dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="290dp"
             android:background="@drawable/custom_btn"
             android:elevation="20dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
                 app:srcCompat="@drawable/user" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="42dp"
-                android:layout_marginLeft="11dp"
+                android:layout_marginTop="48dp"
                 android:textStyle="bold"
-                android:textSize="11dp"
-                android:textColor="@color/white"
+                android:textSize="13dp"
                 android:layout_centerHorizontal="true"
                 android:text=" Profile" />
         </RelativeLayout>
+
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="40dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="35dp"
             android:textStyle="bold"
             android:textColor="@color/teal_700"
             android:text="TELEHEAL" />
@@ -57,9 +77,9 @@
 
     <RelativeLayout
         android:id="@+id/appointment"
-        android:layout_width="130dp"
+        android:layout_width="140dp"
         android:layout_height="130dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="40dp"
         android:background="@drawable/home_btn"
         android:elevation="20dp"
@@ -85,9 +105,9 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/labtest"
-        android:layout_width="130dp"
+        android:layout_width="140dp"
         android:layout_height="130dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="230dp"
         android:background="@drawable/home_btn"
         android:elevation="20dp"
@@ -114,9 +134,9 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/article"
-        android:layout_width="130dp"
+        android:layout_width="140dp"
         android:layout_height="130dp"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="300dp"
         android:layout_marginLeft="230dp"
         android:background="@drawable/home_btn"
         android:elevation="20dp"
@@ -140,12 +160,13 @@
             android:textSize="18dp"
             android:text="Health \nArticle" />
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/medicine"
-        android:layout_width="130dp"
+        android:layout_width="140dp"
         android:layout_height="130dp"
-        android:layout_marginTop="370dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="300dp"
         android:background="@drawable/home_btn"
         android:elevation="20dp"
         android:orientation="horizontal">
@@ -154,25 +175,26 @@
 
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             app:srcCompat="@drawable/medicine" />
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
-            android:textStyle="bold"
-            android:textSize="17dp"
             android:layout_centerHorizontal="true"
-            android:text="     Buy\n Medicine" />
+            android:layout_marginTop="72dp"
+            android:text="     Buy\n Medicine"
+            android:textSize="17dp"
+            android:textStyle="bold" />
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/order"
-        android:layout_width="130dp"
+        android:layout_width="140dp"
         android:layout_height="130dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="460dp"
         android:layout_marginLeft="40dp"
         android:background="@drawable/home_btn"
         android:elevation="20dp"
@@ -198,9 +220,9 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/reminder"
-        android:layout_width="130dp"
+        android:layout_width="140dp"
         android:layout_height="130dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="460dp"
         android:layout_marginLeft="230dp"
         android:background="@drawable/home_btn"
         android:elevation="20dp"
@@ -223,12 +245,40 @@
             android:textSize="18dp"
             android:text=" Reminder" />
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/emergency"
+        android:layout_width="140dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/home_btn"
+        android:elevation="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/siren" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textSize="17dp"
+            android:text="  Emergency" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/logout"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-       android:layout_marginTop="700dp"
+       android:layout_marginTop="660dp"
         android:layout_marginLeft="230dp"
         android:paddingLeft="-30dp"
         android:textStyle="bold"
@@ -239,7 +289,7 @@
         android:id="@+id/imageView8"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="710dp"
+        android:layout_marginTop="670dp"
         android:layout_marginLeft="320dp"
         app:srcCompat="@drawable/logout" />
 

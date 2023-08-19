@@ -43,13 +43,13 @@
 
         <Button
             android:id="@+id/back"
-            android:layout_width="160dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="700dp"
             android:layout_marginLeft="210dp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/custom_btn"
-            android:text="GO BACK"
+            android:text="BACK"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="18dp"/>

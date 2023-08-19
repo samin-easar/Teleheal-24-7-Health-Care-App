@@ -104,8 +104,7 @@
         android:layout_marginLeft="230dp"
         android:layout_marginTop="380dp"
         android:textSize="16dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/teal_700"
         android:text="Forgot Password?" />
 
     <TextView

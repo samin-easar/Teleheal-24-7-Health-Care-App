@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:text="Appointment"/>
+        android:text="Book Appointment"/>
 
 <RelativeLayout
     android:layout_width="350dp"
@@ -188,6 +188,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/time"
