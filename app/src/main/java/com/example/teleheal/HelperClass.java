@@ -48,6 +48,10 @@ public class HelperClass {
         this.password = password;
     }
 
+    public HelperClass(String username) {
+        this.username = username;
+    }
+
     public HelperClass() {
     }
 }

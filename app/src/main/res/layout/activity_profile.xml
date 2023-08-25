@@ -186,12 +186,13 @@
         android:layout_marginTop="500dp"
         android:textSize="25dp"
         android:layout_marginLeft="30dp"
+        android:id="@+id/bg1"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
-        android:layout_marginLeft="200dp"
+        android:layout_toRightOf="@+id/bg1"
         android:id="@+id/bg"
         android:textSize="25dp"
         android:textColor="@color/black"

@@ -21,16 +21,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SignUp extends AppCompatActivity {
+import java.util.HashMap;
 
+public class SignUp extends AppCompatActivity {
     TextView loginhere;
     EditText email,fullname,username,password,repass;
     Button signupbtn;
     FirebaseDatabase database;
     DatabaseReference reference;
     FirebaseAuth auth;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +53,8 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View view) {
                 database=FirebaseDatabase.getInstance();
                 reference=database.getReference("users");
+                DatabaseReference pReference = FirebaseDatabase.getInstance().getReference().child("products");
+                DatabaseReference aReference = FirebaseDatabase.getInstance().getReference().child("appointments");
 
                 String Email=email.getText().toString();
                 String Fullname=fullname.getText().toString();
@@ -67,6 +68,15 @@ public class SignUp extends AppCompatActivity {
                                 HelperClass helperClass=new HelperClass(Email,Fullname,Username,Password);
                                 reference.child(Username).setValue(helperClass);
 
+                                HelperClass helper2 = new HelperClass(Username);
+                                //pReference.child(Username).setValue(helper2);
+                                //aReference.child(Username).setValue(helper2);
+
+                                HashMap user= new HashMap();
+                                user.put(Username, "");
+                                pReference.updateChildren(user);
+                                aReference.updateChildren(user);
+
                                 Toast.makeText(SignUp.this,"SignUp Successfully",Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(SignUp.this,Login.class));
                             }
@@ -75,11 +85,8 @@ public class SignUp extends AppCompatActivity {
                 }
                // HelperClass helperClass=new HelperClass(Email,Fullname,Username,Password);
                 //reference.child(Username).setValue(helperClass);
-
                 //Toast.makeText(SignUp.this,"SignUp Successfully",Toast.LENGTH_LONG).show();
-
         });
-
         loginhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +94,5 @@ public class SignUp extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }
