@@ -22,7 +22,17 @@ Our project “TeleHeal” is to build a healthcare application that will contri
 - Call Ambulance
 
 ## UI
+ Splash Page                 |     Login Page        | Home Page
+:-------------------------:|:-------------------------:|:-------------------------:
+<img src="screenshot/Splash.jpg" height="500em" />|<img src="screenshot/Login.jpg" height="500em" />|<img src="screenshot/Home.jpg" height="500em" />
 
+  Find Dcotors                 |    Doctors List        | Accept Appointement
+:-------------------------:|:-------------------------:|:----------------------
+<img src="screenshot/Find Doctor.jpg" height="500em" />|<img src="screenshot/doctors.jpg" height="500em" />)|<img src="screenshot/appointment.jpg" height="500em" />
+
+  User Profile                |    Emergencies Folder        | Health Articles
+:-------------------------:|:-------------------------:|:----------------------
+<img src="screenshot/Profile.jpg" height="500em" />|<img src="screenshot/emergencies.jpg" height="500em" />|<img src="screenshot/articles.jpg" height="500em" />
 
 ## Contributors
 
