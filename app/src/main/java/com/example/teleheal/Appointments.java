@@ -44,7 +44,7 @@ class AppointmentAdapter extends ArrayAdapter<Info> {
         TextView chemberView = convertView.findViewById(R.id.chember);
         TextView dateView = convertView.findViewById(R.id.date);
         TextView timeView = convertView.findViewById(R.id.time);
-        delete= convertView.findViewById(R.id.deleteP);
+
 
         nameView.setText(currentItem.getDname());
         priceTextView.setText("Fee : "+currentItem.getFee()+" / Tk");

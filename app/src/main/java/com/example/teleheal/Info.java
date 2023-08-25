@@ -8,6 +8,15 @@ public class Info {
     String dname,contact,chember,designation,fee;
 
     String date,time;
+    String itemID;
+
+    public String getItemID() {
+        return itemID;
+    }
+
+    public void setItemID(String itemID) {
+        this.itemID = itemID;
+    }
 
     public Info(String dname, String contact, String chember, String designation, String fee) {
         this.dname = dname;

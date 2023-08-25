@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Teleheal</string>
+    <string name="select">Select Blood group</string>
 </resources>

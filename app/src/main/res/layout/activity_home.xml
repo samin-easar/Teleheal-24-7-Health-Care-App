@@ -20,6 +20,7 @@
             android:layout_marginTop="100dp"
             android:layout_marginLeft="30dp"
             android:textColor="@color/black"
+            android:id="@+id/welcome"
             />
 
         <TextView
@@ -30,7 +31,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_marginTop="100dp"
-            android:layout_marginLeft="122dp"
+            android:layout_toRightOf="@id/welcome"
             android:textColor="@color/black"
             />
         <RelativeLayout
@@ -54,9 +55,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="45dp"
                 android:textStyle="bold"
-                android:textSize="13dp"
+                android:textSize="15dp"
                 android:layout_centerHorizontal="true"
                 android:text=" Profile" />
         </RelativeLayout>

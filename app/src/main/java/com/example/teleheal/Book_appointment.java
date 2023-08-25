@@ -132,9 +132,14 @@ public class Book_appointment extends AppCompatActivity {
                 }
                 else{
                     Info product = new Info(dname,dcontact,dchember,ddesig,dfee,rdate,rtime);
-                    appointmentRef.push().setValue(product);
-
-                    Toast.makeText(Book_appointment.this,"Appointment Registred Successfully",Toast.LENGTH_SHORT).show();
+                    if(rdate==null || rtime==null)
+                    {
+                        Toast.makeText(Book_appointment.this,"Select Date and Time",Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        appointmentRef.push().setValue(product);
+                        Toast.makeText(Book_appointment.this,"Appointment Registred Successfully",Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 

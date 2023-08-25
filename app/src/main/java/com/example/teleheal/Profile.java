@@ -24,11 +24,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-
 public class Profile extends AppCompatActivity {
 
-    TextView fname,uname,uemail,upassword;
-    Button homebtn,button;
+    TextView fname,uname,uemail,upassword,ageF,BG;
+    Button homebtn,editProfile;
     FirebaseUser user;
     DatabaseReference ref;
     RelativeLayout appointment;
@@ -48,7 +47,9 @@ public class Profile extends AppCompatActivity {
         uemail=findViewById(R.id.dashboardemail);
         upassword=findViewById(R.id.dashboardpassword);
         homebtn=findViewById(R.id.home);
-        button=findViewById(R.id.button);
+        editProfile=findViewById(R.id.button);
+        ageF=findViewById(R.id.age);
+        BG=findViewById(R.id.bg);
 
         appointment= findViewById(R.id.appointments);
         appointment.setOnClickListener(new View.OnClickListener() {
@@ -59,10 +60,12 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        button.setOnClickListener(new View.OnClickListener() {
+        editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Profile.this, "Edit button Clicked", Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(Profile.this,Edit_Profile.class);
+                startActivity(intent);
+                //Toast.makeText(Profile.this, "Edit button Clicked", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -93,11 +96,15 @@ public class Profile extends AppCompatActivity {
                     String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
                     String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
                     String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+                    String age = snapshot.child(userUsername).child("age").getValue(String.class);
+                    String Bg = snapshot.child(userUsername).child("blood group").getValue(String.class);
 
                     fname.setText(fullnameFromDB);
                     uemail.setText(emailFromDB);
                     uname.setText(usernameFromDB);
                     upassword.setText(passwordFromDB);
+                    ageF.setText(age);
+                    BG.setText(Bg);
                 }
             }
             @Override

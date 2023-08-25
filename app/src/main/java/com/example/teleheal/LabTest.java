@@ -48,7 +48,7 @@ class ItemAdapter2 extends ArrayAdapter<Info> {
         TextView descriptionTextView = convertView.findViewById(R.id.line_b);
 
         titleTextView.setText(currentItem.getName());
-        descriptionTextView.setText(currentItem.getPrice());
+        descriptionTextView.setText(currentItem.getPrice()+"/-");
 
         return convertView;
     }

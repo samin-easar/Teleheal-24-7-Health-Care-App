@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mbg"
+    tools:context=".Edit_Profile">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TELEHEAL"
+        android:textSize="40dp"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update your Data"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="180dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_textfield"
+        android:hint="Full Name"
+        android:paddingLeft="15dp"
+        android:id="@+id/editFname"
+        android:textColorHint="@color/black"
+        />
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_textfield"
+        android:hint="Email"
+        android:paddingLeft="15dp"
+        android:textColorHint="@color/black"
+        android:id="@+id/editEmail"
+        />
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="320dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_textfield"
+        android:hint="Password"
+        android:paddingLeft="15dp"
+        android:id="@+id/editPass"
+        android:textColorHint="@color/black"
+        />
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="390dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_textfield"
+        android:hint="Age"
+        android:paddingLeft="10dp"
+        android:id="@+id/editAge"
+        android:textColorHint="@color/black"
+        />
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="35dp"
+        android:textSize="18dp"
+        android:background="@drawable/custom_textfield"
+        android:text="Blood group"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        />
+
+
+    <Spinner
+        android:id="@+id/bloodgroup"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="200dp"
+        android:textAlignment="center"
+        android:background="@drawable/custom_textfield"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        >
+        <Button
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_btn"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_weight="0.4"
+            android:textSize="17dp"
+            android:text="Update" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            />
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_btn"
+            android:text="Back"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_weight="0.4"
+            android:textSize="17dp"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

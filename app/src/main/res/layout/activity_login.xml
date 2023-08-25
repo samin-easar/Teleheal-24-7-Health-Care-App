@@ -18,6 +18,8 @@
         android:textSize="40dp"
         android:textStyle="bold" />
 
+
+
     <EditText
         android:id="@+id/username"
         android:layout_width="320dp"
@@ -42,6 +44,7 @@
         android:background="@drawable/custom_textfield"
         android:ems="10"
         android:hint="Password"
+
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/black"

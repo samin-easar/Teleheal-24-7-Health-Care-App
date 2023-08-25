@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
+    android:layout_width="320dp"
     android:background="@drawable/home_btn"
     android:layout_marginLeft="30dp"
     android:layout_height="wrap_content">
@@ -12,31 +12,21 @@
         android:layout_height="wrap_content"
         android:text="Product Name"
         android:textSize="23dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
         android:textColor="@color/black"
         android:id="@+id/pname"
-
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Product Price"
         android:textSize="20dp"
-        android:layout_marginTop="60dp"
-       android:layout_marginLeft="60dp"
+        android:layout_marginTop="45dp"
+       android:layout_marginLeft="150dp"
         android:layout_marginBottom="20dp"
         android:textColor="@color/black"
         android:id="@+id/pprice"
         />
-
-    <ImageView
-        android:id="@+id/deleteP"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="290dp"
-        android:layout_centerVertical="true"
-        app:srcCompat="@drawable/trash" />
-
 
 </RelativeLayout>
