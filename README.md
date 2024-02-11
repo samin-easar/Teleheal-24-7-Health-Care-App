@@ -3,6 +3,8 @@
 
 Our project “TeleHeal” is to build a healthcare application that will contribute to keep our body fit and healthy amidst our busy schedule. Besides it will provide shortcuts to contact different medical persons and get help to keep track of medicine intake according to their individual doses. In brief, TeleHeal will upgrade telemedicine process.
 
+API KEY : AIzaSyASJVqbNv_u_btDOuSSH9hikHgtO6bvM3w
+
 
 ## Software Platforms
 
